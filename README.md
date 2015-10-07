@@ -4,6 +4,8 @@ This project is the resulting Grunt distribution build of the Yo Angular project
 ## To Run
 Place the files in the root of your web server.
 
+Log in with John_Smith & password.
+
 HTML templates for each form (view) reside in the /views folder.
 
 JS services and controllers reside in the /scripts folder
