@@ -1,0 +1,197 @@
+  <div class="panel panel-default margin-top-30">
+
+    <div class="form-heading">
+      <div class="wave">
+        <div>
+          <div class="pull-right">* <span class="required">DENOTES REQUIRED FIELD</span></div>
+          <span class="step">STEP 1</span><br/>
+          <span class="step-name">THE NOMINEE</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-body">
+      <div class="container form">
+        <div class="row">
+          <div class="col col-md-11">
+            <p>
+            Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla vitae elit libero, a pharetra augue.
+          </p>
+          </div>
+        </div>
+          
+        <!-- NOMINEE ENTRY -->
+        <form name="userForm" ng-submit="next('performance')" novalidate>
+
+          <div class="row">
+            <div class="col col-md-3" ng-class="{ 'has-error' : userForm.number.$invalid && !userForm.number.$pristine }">
+              <span class="required">*</span> Nominee's Employee Number
+              <input type="text" name="number" class="form-control required" placeholder="" ng-model="nomineeModel.number" required>
+              <p ng-show="userForm.number.$invalid && !userForm.number.$pristine" class="error">Employee number is required.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-md-3">
+              <span class="required">*</span> Sales Organization
+              <select class="form-control required" name="salesOrg"          
+                      ng-model="nomineeModel.salesOrg" 
+                      ng-options="item.name for item in salesOrg track by item.id"
+                      required> 
+                <option value="">Choose</option> 
+              </select> 
+              <p ng-show="userForm.salesOrg.$invalid && !userForm.salesOrg.$pristine" class="error">Sales organization is required.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-md-3">
+              <span class="required">*</span> Region
+              <select class="form-control required" name="region"          
+                      ng-model="nomineeModel.region" 
+                      ng-options="item.name for item in regions track by item.id"
+                      required> 
+                <option value="">Choose</option> 
+              </select> 
+              <p ng-show="userForm.region.$invalid && !userForm.region.$pristine" class="error">Region is required.</p>
+            </div>
+
+            <div class="col col-md-3">
+              <span class="required">*</span> Work Country
+              <select class="form-control required" name="country"          
+                      ng-model="nomineeModel.country" 
+                      ng-options="item.name for item in countries track by item.id"
+                      required> 
+                <option value="">Choose</option> 
+              </select> 
+              <p ng-show="userForm.country.$invalid && !userForm.country.$pristine" class="error">Work country is required.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-md-3">
+              <span class="required">*</span> Salutation
+              <select class="form-control required" name="salutation"          
+                      ng-model="nomineeModel.salutation" 
+                      ng-options="item.name for item in salutations track by item.id"
+                      required> 
+                <option value="">Choose</option> 
+              </select> 
+              <p ng-show="userForm.salutation.$invalid && !userForm.salutation.$pristine" class="error">Salutation is required.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-md-3" ng-class="{ 'has-error' : userForm.first.$invalid && !userForm.first.$pristine }">
+              <span class="required">*</span> First Name
+              <input type="text" name="first" class="form-control required" placeholder="" ng-model="nomineeModel.first" required>
+              <p ng-show="userForm.first.$invalid && !userForm.first.$pristine" class="error">First name is required.</p>
+            </div>
+            <div class="col col-md-3" ng-class="{ 'has-error' : userForm.last.$invalid && !userForm.last.$pristine }">
+              <span class="required">*</span> Family/Last Name
+              <input type="text" name="last" class="form-control required" placeholder="" ng-model="nomineeModel.last" required>
+              <p ng-show="userForm.last.$invalid && !userForm.last.$pristine" class="error">Last name is required.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-md-6" ng-class="{ 'has-error' : userForm.address.$invalid && !userForm.address.$pristine }">
+              <span class="required">*</span> Work Address
+              <input type="text" name="address" class="form-control required" placeholder="" ng-model="nomineeModel.address" required>
+              <p ng-show="userForm.address.$invalid && !userForm.address.$pristine" class="error">Address is required.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-md-3" ng-class="{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine }">
+              <span class="required">*</span> Office Phone Number
+              <input type="phone" name="phone" class="form-control required" placeholder="" ng-model="nomineeModel.officeTel" ui-mask="(999) 999-9999" required>
+              <p ng-show="userForm.phone.$invalid && !userForm.phone.$pristine" class="error">Phone is required.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-md-3" ng-class="{ 'has-error' : userForm.mobile.$invalid && !userForm.mobile.$pristine }">
+              <span class="required">*</span> Mobile Phone Number
+              <input type="phone" name="mobile" class="form-control required" placeholder="" ng-model="nomineeModel.mobileTel" ui-mask="(999) 999-9999" required>
+              <p ng-show="userForm.mobile.$invalid && !userForm.mobile.$pristine" class="error">Mobile is required.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-md-3" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+              <span class="required">*</span> Email
+              <input type="email" name="email" class="form-control required" placeholder="" ng-model="nomineeModel.email" required>
+              <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="error">Email is required.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-md-3">
+              <span class="required">*</span> Nominee's Position/Title
+              <select class="form-control required" name="title"          
+                      ng-model="nomineeModel.title" 
+                      ng-options="item.name for item in titles track by item.id"
+                      required> 
+                <option value="">Choose</option> 
+              </select> 
+              <p ng-show="userForm.title.$invalid && !userForm.title.$pristine" class="error">Title is required.</p>
+            </div>
+          </div>
+
+          <hr/>
+
+          <!-- NOMINATOR'S MANAGER CHECKBOX -->
+          <div class="row">
+            <div class="col col-md-4">
+              <span class="required">*</span> Are you the nominee's direct manager?<br/>
+              <label>
+                <input type="checkbox"
+                 ng-model="nomineeModel.nominatedByManager"
+                 ng-true-value="'Yes'"
+                 ng-false-value="'No'">
+                Yes
+              </label>
+            </div>
+          </div>
+
+          <hr/>
+
+          <!-- NOMINATOR'S FORM -->
+          <div class="row">
+            <div class="col col-md-3" ng-class="{ 'has-error' : userForm.nomFirst.$invalid && !userForm.nomFirst.$pristine }">
+              <span class="required">*</span> Nominator's First Name
+              <input type="text" name="nomFirst" class="form-control required" placeholder="" ng-model="nomineeModel.nominator.nom_first" required>
+              <p ng-show="userForm.nomFirst.$invalid && !userForm.nomFirst.$pristine" class="error">First name is required.</p>
+            </div>
+            <div class="col col-md-3" ng-class="{ 'has-error' : userForm.nlast.$invalid && !userForm.nlast.$pristine }">
+              <span class="required">*</span> Nominator's Family/Last Name
+              <input type="text" name="nlast" class="form-control required" placeholder="" ng-model="nomineeModel.nominator.last" required>
+              <p ng-show="userForm.nlast.$invalid && !userForm.nlast.$pristine" class="error">Last name is required.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-md-3" ng-class="{ 'has-error' : userForm.nomEmail.$invalid && !userForm.nomEmail.$pristine }">
+              <span class="required">*</span> Nominator's Email
+              <input type="email" name="nomEmail" class="form-control required" placeholder="" ng-model="nomineeModel.nominator.nom_email" required>
+              <p ng-show="userForm.nomEmail.$invalid && !userForm.nomEmail.$pristine" class="error">Email is required.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-md-3" ng-class="{ 'has-error' : userForm.nomPhone.$invalid && !userForm.nomPhone.$pristine }">
+              <span class="required">*</span> Nominator's Work Phone Number
+              <input type="phone" name="nomPhone" class="form-control required" placeholder="" ng-model="nomineeModel.nominator.nom_phone" ui-mask="(999) 999-9999" required>
+              <p ng-show="userForm.nomPhone.$invalid && !userForm.nomPhone.$pristine" class="error">Phone is required.</p>
+            </div>
+          </div>
+
+          <hr/>
+
+          <button type="submit" class="btn btn-form" ng-disabled="userForm.$invalid">NEXT STEP <i class="fa fa-angle-right fa-lg padding-left-20"></i></button>
+        </form>
+      </div>
+    </div>
+    
+  </div>

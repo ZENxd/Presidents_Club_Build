@@ -1,0 +1,133 @@
+  <div class="panel panel-default margin-top-30">
+
+    <div class="form-heading">
+      <div class="wave">
+        <div>
+          <div class="pull-right">* <span class="required">DENOTES REQUIRED FIELD</span></div>
+          <span class="step">STEP 2</span><br/>
+          <span class="step-name">SALES PERFORMANCE</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-body">
+      <div class="container form">
+
+        <div class="row">
+          <div class="col-md-6">
+            <p>Note: All nominees are required to have a sales quota structure</p>
+          </div>
+        </div>
+        
+        <form name="userForm" ng-submit="next('comments')" novalidate>
+
+          <div class="row">
+            <div class="col col-md-3" ng-class="{ 'has-error' : userForm.salesQuota.$invalid && !userForm.salesQuota.$pristine }">
+              <span class="required">*</span> Fiscal Year Sales Quota in USD <br/>
+              <div class="eg">{{nomineeModel.performance.salesQuota | currency}}</div>
+
+              <div class="currency">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
+                  <input type="number" name="salesQuota" class="form-control" placeholder="" ng-model="nomineeModel.performance.salesQuota" required>
+                </div>
+              </div>
+
+              <p ng-show="userForm.salesQuota.$invalid && !userForm.salesQuota.$pristine" class="error">Employee Sales Quota is required.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-md-3" ng-class="{ 'has-error' : userForm.sales.$invalid && !userForm.sales.$pristine }">
+              <span class="required">*</span> Actual Fiscal Year Sales in USD <br/>
+              <div class="eg">{{nomineeModel.performance.sales | currency}}</div>
+
+              <div class="currency">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
+                  <input type="number" name="sales" class="form-control" placeholder="" ng-model="nomineeModel.performance.sales" required>
+                </div>
+              </div>
+              
+              <p ng-show="userForm.sales.$invalid && !userForm.sales.$pristine" class="error">Employee Sales is required.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-md-3" ng-class="{ 'has-error' : userForm.percentOver.$invalid && !userForm.percentOver.$pristine }">
+              <span class="required">*</span> Percentage Over Sales Quota <br/>
+              <div class="eg">E.G. 110</div>
+
+              <div class="currency">
+                <div class="input-group">
+                  <input type="number" name="percentOver" class="form-control" placeholder="" ng-model="nomineeModel.performance.percentOver" required>
+                  <span class="input-group-addon">%</span>
+                </div>
+              </div>
+              
+              <p ng-show="userForm.percentOver.$invalid && !userForm.percentOver.$pristine" class="error">Precentage is required.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-md-3" ng-class="{ 'has-error' : userForm.percentLast.$invalid && !userForm.percentLast.$pristine }">
+              <span class="required">*</span> Previous Year Percent of Quota <br/>
+              <div class="eg">E.G. 103</div>
+
+              <div class="currency">
+                <div class="input-group">
+                  <input type="number" name="percentLast" class="form-control" placeholder="" ng-model="nomineeModel.performance.percentLast" required>
+                  <span class="input-group-addon">%</span>
+                </div>
+              </div>
+              
+              <p ng-show="userForm.percentLast.$invalid && !userForm.percentLast.$pristine" class="error">Precentage is required.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-md-4">
+              <span class="required">*</span> Is the nominee a previous Presidents Club winner?<br/>
+              <label>
+                <input type="checkbox"
+                 ng-model="nomineeModel.recurringWinner"
+                 ng-true-value="'Yes'"
+                 ng-false-value="'No'">
+                Yes
+              </label>
+            </div>
+          </div>
+
+          <div ng-show="nomineeModel.recurringWinner === 'Yes'">
+            <div class="row">
+              <div class="col col-md-3">
+                <span class="required">*</span> If yes, then how many times?
+                <select class="form-control required" name="winCount"          
+                        ng-model="nomineeModel.winCount" 
+                        ng-options="item.name for item in winCount track by item.id"
+                        required> 
+                  <option value="">Choose</option> 
+                </select> 
+                <p ng-show="userForm.winCount.$invalid && !userForm.winCount.$pristine" class="error">Seletion is required.</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col col-md-3">
+                List what years (if known)
+                <input type="text" name="years" class="form-control required" placeholder="" ng-model="nomineeModel.years">
+              </div>
+            </div>
+          </div>
+            
+
+          <hr/>
+          <button type="button" class="btn btn-form" ng-click="back('nominee')"><i class="fa fa-angle-left fa-lg padding-right-20 pull-left"></i> BACK</button>
+
+          <button type="submit" class="btn btn-form" ng-disabled="userForm.$invalid">NEXT STEP <i class="fa fa-angle-right fa-lg padding-left-20 pull-right"></i></button>
+        </form>
+      <!-- End form -->
+      </div>
+    </div>
+    
+  </div>
