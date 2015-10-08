@@ -15,7 +15,7 @@
         <form name="userForm" ng-submit="save('thanks')" novalidate>
 
           <div class="row">
-            <div class="col col-md-6" ng-class="{ 'has-error' : userForm.performance.$invalid && !userForm.performance.$pristine }">
+            <div class="col col-md-7 col-xs-8" ng-class="{ 'has-error' : userForm.performance.$invalid && !userForm.performance.$pristine }">
               <span class="required">*</span> Sales Performance/Results (70 words max)
               <div class="eg">Please make brief comments with additional qualitative comments on results, track record of results.</div>
               <textarea name="performance" class="form-control required" placeholder="" ng-model="nomineeModel.comments.performance" rows="5" cols="50" maximum-words-validation="70" required></textarea>
@@ -28,7 +28,7 @@
           </div>
 
           <div class="row">
-            <div class="col col-md-6" ng-class="{ 'has-error' : userForm.planning.$invalid && !userForm.planning.$pristine }">
+            <div class="col col-md-7 col-xs-8" ng-class="{ 'has-error' : userForm.planning.$invalid && !userForm.planning.$pristine }">
               <span class="required">*</span> Sales and Planning Skills (70 words max)
               <div class="eg">Please make brief comments about how the nominee plans and manages the sales process and their accounts for the best results.</div>
               <textarea name="planning" class="form-control required" placeholder="" ng-model="nomineeModel.comments.planning" rows="5" cols="50" maximum-words-validation="70" required></textarea>
@@ -41,7 +41,7 @@
           </div>
 
           <div class="row">
-            <div class="col col-md-6" ng-class="{ 'has-error' : userForm.relationship.$invalid && !userForm.relationship.$pristine }">
+            <div class="col col-md-7 col-xs-8" ng-class="{ 'has-error' : userForm.relationship.$invalid && !userForm.relationship.$pristine }">
               <span class="required">*</span> Customer Relationship and Loyalty (70 words max)
               <div class="eg">Please make brief comments on how the nominee manages their customer relationships and customer loyalty for Agilent.</div>
               <textarea name="relationship" class="form-control required" placeholder="" ng-model="nomineeModel.comments.relationship" rows="5" cols="50" words-validation="70" required></textarea>
@@ -54,7 +54,7 @@
           </div>
 
           <div class="row">
-            <div class="col col-md-6" ng-class="{ 'has-error' : userForm.behavior.$invalid && !userForm.behavior.$pristine }">
+            <div class="col col-md-7 col-xs-8" ng-class="{ 'has-error' : userForm.behavior.$invalid && !userForm.behavior.$pristine }">
               <span class="required">*</span> One Agilent Behavior (70 words max)
               <div class="eg">Please make brief comments on how the nominee excels in teamwork and disciplined collaboration to achieve results for Agilent.</div>
               <textarea name="behavior" class="form-control required" placeholder="" ng-model="nomineeModel.comments.behavior" rows="5" cols="50" words-validation="70" required></textarea>
@@ -67,7 +67,7 @@
           </div>
 
           <div class="row">
-            <div class="col col-md-6" ng-class="{ 'has-error' : userForm.leadership.$invalid && !userForm.leadership.$pristine }">
+            <div class="col col-md-7 col-xs-8" ng-class="{ 'has-error' : userForm.leadership.$invalid && !userForm.leadership.$pristine }">
               <span class="required">*</span> Leadership/Role Model (70 words max)
               <div class="eg">Please make brief comments on the nominee’s demonstrated leadership in the sales organization as well as their coaching and helping their team members.</div>
               <textarea name="leadership" class="form-control required" placeholder="" ng-model="nomineeModel.comments.leadership" rows="5" cols="50" maximum-words-validation="70" required></textarea>

@@ -22,7 +22,7 @@
         <form name="userForm" ng-submit="next('comments')" novalidate>
 
           <div class="row">
-            <div class="col col-md-3" ng-class="{ 'has-error' : userForm.salesQuota.$invalid && !userForm.salesQuota.$pristine }">
+            <div class="col col-md-3 col-xs-4" ng-class="{ 'has-error' : userForm.salesQuota.$invalid && !userForm.salesQuota.$pristine }">
               <span class="required">*</span> Fiscal Year Sales Quota in USD <br/>
               <div class="eg">{{nomineeModel.performance.salesQuota | currency}}</div>
 
@@ -38,7 +38,7 @@
           </div>
 
           <div class="row">
-            <div class="col col-md-3" ng-class="{ 'has-error' : userForm.sales.$invalid && !userForm.sales.$pristine }">
+            <div class="col col-md-3 col-xs-4" ng-class="{ 'has-error' : userForm.sales.$invalid && !userForm.sales.$pristine }">
               <span class="required">*</span> Actual Fiscal Year Sales in USD <br/>
               <div class="eg">{{nomineeModel.performance.sales | currency}}</div>
 
@@ -54,7 +54,7 @@
           </div>
 
           <div class="row">
-            <div class="col col-md-3" ng-class="{ 'has-error' : userForm.percentOver.$invalid && !userForm.percentOver.$pristine }">
+            <div class="col col-md-3 col-xs-4" ng-class="{ 'has-error' : userForm.percentOver.$invalid && !userForm.percentOver.$pristine }">
               <span class="required">*</span> Percentage Over Sales Quota <br/>
               <div class="eg">E.G. 110</div>
 
@@ -70,7 +70,7 @@
           </div>
 
           <div class="row">
-            <div class="col col-md-3" ng-class="{ 'has-error' : userForm.percentLast.$invalid && !userForm.percentLast.$pristine }">
+            <div class="col col-md-3 col-xs-4" ng-class="{ 'has-error' : userForm.percentLast.$invalid && !userForm.percentLast.$pristine }">
               <span class="required">*</span> Previous Year Percent of Quota <br/>
               <div class="eg">E.G. 103</div>
 
@@ -86,7 +86,7 @@
           </div>
 
           <div class="row">
-            <div class="col col-md-4">
+            <div class="col col-md-5 col-xs-11">
               <span class="required">*</span> Is the nominee a previous Presidents Club winner?<br/>
               <label>
                 <input type="checkbox"
@@ -100,7 +100,7 @@
 
           <div ng-show="nomineeModel.recurringWinner === 'Yes'">
             <div class="row">
-              <div class="col col-md-3">
+              <div class="col col-md-3 col-xs-4">
                 <span class="required">*</span> If yes, then how many times?
                 <select class="form-control required" name="winCount"          
                         ng-model="nomineeModel.winCount" 
@@ -113,7 +113,7 @@
             </div>
 
             <div class="row">
-              <div class="col col-md-3">
+              <div class="col col-md-3 col-xs-4">
                 List what years (if known)
                 <input type="text" name="years" class="form-control required" placeholder="" ng-model="nomineeModel.years">
               </div>
