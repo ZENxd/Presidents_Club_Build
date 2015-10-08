@@ -8879,7 +8879,7 @@ body {
 
 /* line 165, ../../app/styles/main.scss */
 .btn-primary.light {
-  background-color: #7bb1df;
+  background-color: #e2ba23;
   border-color: #a0c6ea;
   letter-spacing: 2px;
   font-size: 1.1em;
@@ -8943,36 +8943,53 @@ body {
 /* line 219, ../../app/styles/main.scss */
 .login .btn {
   color: #fff;
-  background: #7bb1df;
-  letter-spacing: 2px;
-  font-size: 1.1em;
 }
-/* line 225, ../../app/styles/main.scss */
+/* line 222, ../../app/styles/main.scss */
+.login .btn-login {
+  background: #e2ba23;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+  height: 50px;
+}
+/* line 228, ../../app/styles/main.scss */
+.login .btn-login:hover,
+.login .btn-login:focus,
+.login .btn-login:active,
+.login .btn-login.active {
+  background: #CAA823;
+}
+/* line 234, ../../app/styles/main.scss */
+.login .btn-login:active,
+.login .btn-login.active {
+  background: #CAA823;
+  box-shadow: none;
+}
+/* line 239, ../../app/styles/main.scss */
 .login .row {
   margin-top: 10px;
 }
-/* line 228, ../../app/styles/main.scss */
+/* line 242, ../../app/styles/main.scss */
 .login .error {
   color: #CA1D2D;
 }
 
-/* line 232, ../../app/styles/main.scss */
+/* line 246, ../../app/styles/main.scss */
 .form {
   padding: 0px 30px 20px 30px;
   color: #8B8B8B;
   font-size: 0.9em;
 }
-/* line 236, ../../app/styles/main.scss */
+/* line 250, ../../app/styles/main.scss */
 .form .btn {
   color: #d3a907;
   text-align: left;
 }
-/* line 240, ../../app/styles/main.scss */
+/* line 254, ../../app/styles/main.scss */
 .form .btn .caret {
   float: right;
   margin-top: 8px;
 }
-/* line 244, ../../app/styles/main.scss */
+/* line 258, ../../app/styles/main.scss */
 .form .btn-form {
   background: #e2ba23;
   color: #ffffff;
@@ -8980,11 +8997,11 @@ body {
   letter-spacing: 2px;
   height: 50px;
 }
-/* line 251, ../../app/styles/main.scss */
+/* line 265, ../../app/styles/main.scss */
 .form .btn-form > i {
   padding-top: 2px;
 }
-/* line 254, ../../app/styles/main.scss */
+/* line 268, ../../app/styles/main.scss */
 .form .btn-form:hover,
 .form .btn-form:focus,
 .form .btn-form:active,
@@ -8992,22 +9009,22 @@ body {
 .form .open > .dropdown-toggle.btn-form {
   background: #CAA823;
 }
-/* line 261, ../../app/styles/main.scss */
+/* line 275, ../../app/styles/main.scss */
 .form .btn-form:active,
 .form .btn-form.active {
   background: #CAA823;
   box-shadow: none;
 }
-/* line 266, ../../app/styles/main.scss */
+/* line 280, ../../app/styles/main.scss */
 .form .dropdown-menu > li > a {
   color: #d3a907;
   cursor: pointer;
 }
-/* line 270, ../../app/styles/main.scss */
+/* line 284, ../../app/styles/main.scss */
 .form .required {
   color: #d3a907;
 }
-/* line 273, ../../app/styles/main.scss */
+/* line 287, ../../app/styles/main.scss */
 .form .eg {
   color: #CACACA;
   font-size: 0.9em;
@@ -9015,16 +9032,16 @@ body {
   margin-bottom: 7px;
   text-transform: uppercase;
 }
-/* line 280, ../../app/styles/main.scss */
+/* line 294, ../../app/styles/main.scss */
 .form .row {
   margin-top: 20px;
 }
-/* line 283, ../../app/styles/main.scss */
+/* line 297, ../../app/styles/main.scss */
 .form .error {
   color: #CA1D2D;
 }
 
-/* line 288, ../../app/styles/main.scss */
+/* line 302, ../../app/styles/main.scss */
 .btn-approve {
   background: #e2ba23;
   color: #ffffff;
@@ -9032,13 +9049,13 @@ body {
   letter-spacing: 2px;
 }
 
-/* line 295, ../../app/styles/main.scss */
+/* line 309, ../../app/styles/main.scss */
 .btn-approve > i {
   float: right;
   padding-top: 2px;
 }
 
-/* line 300, ../../app/styles/main.scss */
+/* line 314, ../../app/styles/main.scss */
 .btn-approve:hover,
 .btn-approve:focus,
 .btn-approve:active,
@@ -9047,14 +9064,14 @@ body {
   background: #CAA823;
 }
 
-/* line 308, ../../app/styles/main.scss */
+/* line 322, ../../app/styles/main.scss */
 .btn-approve:active,
 .btn-approve.active {
   background: #CAA823;
   box-shadow: none;
 }
 
-/* line 314, ../../app/styles/main.scss */
+/* line 328, ../../app/styles/main.scss */
 .btn-deny {
   background: #E6E6E6;
   color: #E02B2D;
@@ -9062,13 +9079,13 @@ body {
   letter-spacing: 2px;
 }
 
-/* line 321, ../../app/styles/main.scss */
+/* line 335, ../../app/styles/main.scss */
 .btn-deny > i {
   float: right;
   padding-top: 2px;
 }
 
-/* line 326, ../../app/styles/main.scss */
+/* line 340, ../../app/styles/main.scss */
 .btn-deny:hover,
 .btn-deny:focus,
 .btn-deny:active,
@@ -9077,14 +9094,14 @@ body {
   background: #B9B9B9;
 }
 
-/* line 334, ../../app/styles/main.scss */
+/* line 348, ../../app/styles/main.scss */
 .btn-deny:active,
 .btn-deny.active {
   background: #B9B9B9;
   box-shadow: none;
 }
 
-/* line 340, ../../app/styles/main.scss */
+/* line 354, ../../app/styles/main.scss */
 .btn-review {
   background: #E8E8E8;
   color: #7F7F7F;
@@ -9095,7 +9112,7 @@ body {
   font-weight: 700;
 }
 
-/* line 350, ../../app/styles/main.scss */
+/* line 364, ../../app/styles/main.scss */
 .btn-review:hover,
 .btn-review:focus,
 .btn-review:active,
@@ -9104,46 +9121,46 @@ body {
   background: #8F95A5;
 }
 
-/* line 358, ../../app/styles/main.scss */
+/* line 372, ../../app/styles/main.scss */
 .btn-review:active,
 .btn-review.active {
   background: #8F95A5;
   box-shadow: none;
 }
 
-/* line 364, ../../app/styles/main.scss */
+/* line 378, ../../app/styles/main.scss */
 .row.underline {
   border-bottom: 1px solid #ccc;
 }
 
-/* line 368, ../../app/styles/main.scss */
+/* line 382, ../../app/styles/main.scss */
 .listName {
   font-size: 1.1em;
   text-transform: uppercase;
 }
-/* line 371, ../../app/styles/main.scss */
+/* line 385, ../../app/styles/main.scss */
 .listName a {
   cursor: pointer;
   color: #363636;
 }
 
-/* line 377, ../../app/styles/main.scss */
+/* line 391, ../../app/styles/main.scss */
 .listTitle {
   font-size: 0.9em;
   color: #ccc;
 }
 
 /* Supporting marketing content */
-/* line 385, ../../app/styles/main.scss */
+/* line 399, ../../app/styles/main.scss */
 .marketing {
   margin: 40px 0;
 }
-/* line 387, ../../app/styles/main.scss */
+/* line 401, ../../app/styles/main.scss */
 .marketing p + h4 {
   margin-top: 28px;
 }
 
-/* line 392, ../../app/styles/main.scss */
+/* line 406, ../../app/styles/main.scss */
 .loader {
   background: #fff url(../images/ajax-loader.b04bbf31.gif) center 30px no-repeat;
   width: 100px;
@@ -9156,7 +9173,7 @@ body {
   color: #363B45;
 }
 
-/* line 404, ../../app/styles/main.scss */
+/* line 418, ../../app/styles/main.scss */
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
@@ -9166,13 +9183,13 @@ body {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  /* line 415, ../../app/styles/main.scss */
+  /* line 429, ../../app/styles/main.scss */
   .container {
     max-width: 1000px;
   }
 
   /* Remove the padding we set earlier */
-  /* line 419, ../../app/styles/main.scss */
+  /* line 433, ../../app/styles/main.scss */
   .header,
   .marketing,
   .footer {
@@ -9181,108 +9198,108 @@ padding-right: 0;*/
   }
 
   /* Space out the masthead */
-  /* line 426, ../../app/styles/main.scss */
+  /* line 440, ../../app/styles/main.scss */
   .header {
     margin-bottom: 30px;
   }
 
-  /* line 429, ../../app/styles/main.scss */
+  /* line 443, ../../app/styles/main.scss */
   .navbar-right {
     float: right !important;
     margin-top: 5px;
   }
 
   /* Remove the bottom border on the panel for visual effect */
-  /* line 434, ../../app/styles/main.scss */
+  /* line 448, ../../app/styles/main.scss */
   .panel {
     border-bottom: 0;
   }
-  /* line 436, ../../app/styles/main.scss */
+  /* line 450, ../../app/styles/main.scss */
   .panel hr {
     margin-right: 60px;
   }
 }
-/* line 442, ../../app/styles/main.scss */
+/* line 456, ../../app/styles/main.scss */
 .pad-top-8 {
   padding-top: 8px;
 }
 
-/* line 446, ../../app/styles/main.scss */
+/* line 460, ../../app/styles/main.scss */
 .margin-top-10 {
   margin-top: 10px;
 }
 
-/* line 450, ../../app/styles/main.scss */
+/* line 464, ../../app/styles/main.scss */
 .margin-top-20 {
   margin-top: 20px;
 }
 
-/* line 454, ../../app/styles/main.scss */
+/* line 468, ../../app/styles/main.scss */
 .margin-top-30 {
   margin-top: 30px;
 }
 
-/* line 458, ../../app/styles/main.scss */
+/* line 472, ../../app/styles/main.scss */
 .padding-left-20 {
   padding-left: 20px;
 }
 
-/* line 462, ../../app/styles/main.scss */
+/* line 476, ../../app/styles/main.scss */
 .padding-left-50 {
   padding-left: 50px;
 }
 
-/* line 466, ../../app/styles/main.scss */
+/* line 480, ../../app/styles/main.scss */
 .padding-right-5 {
   padding-right: 5px;
 }
 
-/* line 470, ../../app/styles/main.scss */
+/* line 484, ../../app/styles/main.scss */
 .padding-right-10 {
   padding-right: 10px;
 }
 
-/* line 474, ../../app/styles/main.scss */
+/* line 488, ../../app/styles/main.scss */
 .padding-right-20 {
   padding-right: 20px;
 }
 
-/* line 478, ../../app/styles/main.scss */
+/* line 492, ../../app/styles/main.scss */
 .padding-top-20 {
   padding-top: 20px;
 }
 
-/* line 482, ../../app/styles/main.scss */
+/* line 496, ../../app/styles/main.scss */
 .padding-top-30 {
   padding-top: 30px;
 }
 
-/* line 486, ../../app/styles/main.scss */
+/* line 500, ../../app/styles/main.scss */
 .padding-top-50 {
   padding-top: 50px;
 }
 
-/* line 490, ../../app/styles/main.scss */
+/* line 504, ../../app/styles/main.scss */
 .padding-bottom-20 {
   padding-bottom: 20px;
 }
 
-/* line 494, ../../app/styles/main.scss */
+/* line 508, ../../app/styles/main.scss */
 .padding-bottom-30 {
   padding-bottom: 30px;
 }
 
-/* line 498, ../../app/styles/main.scss */
+/* line 512, ../../app/styles/main.scss */
 .padding-bottom-50 {
   padding-bottom: 50px;
 }
 
-/* line 502, ../../app/styles/main.scss */
+/* line 516, ../../app/styles/main.scss */
 .margin-bottom-5 {
   margin-bottom: 5px;
 }
 
-/* line 506, ../../app/styles/main.scss */
+/* line 520, ../../app/styles/main.scss */
 .margin-bottom-10 {
   margin-bottom: 10px;
 }
