@@ -26,6 +26,11 @@ angular.module('presidentsClubApp', [
                 controller: 'MainCtrl',
                 controllerAs: 'main'
             })
+            .when('/home', {
+                templateUrl: 'views/home.html',
+                controller: 'HomeCtrl',
+                controllerAs: 'home'
+            })
             .when('/nominee', {
                 templateUrl: 'views/nominee.html',
                 controller: 'NomineeCtrl',
@@ -130,7 +135,7 @@ angular.module('presidentsClubApp')
 
             //Bounce to here if we have a user logged in
             if ($rootScope.globals.currentUser) {
-                $location.path('/nominee');
+                $location.path('/home');
             }
 
             // Obj for user creds
@@ -155,7 +160,6 @@ angular.module('presidentsClubApp')
                 AuthenticationService.Login($scope.loginCredentials.username, $scope.loginCredentials.password, function(response) {
                     if (response.success) {
                         AuthenticationService.SetCredentials($scope.loginCredentials.username, $scope.loginCredentials.password);
-                        $rootScope.cloud = true;
                         $scope.loginError = false;
                         $scope.next();
                     } else {
@@ -165,6 +169,39 @@ angular.module('presidentsClubApp')
                     }
                 });
             };
+
+            // Continue to step 1 after successfull login
+            $scope.next = function() {
+                globals.loader.show = false;
+                $location.path('/home');
+            };
+
+        }
+    ]);
+
+'use strict';
+
+/**
+ * @ngdoc function
+ * @name presidentsClubApp.controller:HomeCtrl
+ * @description
+ * # HomeCtrl
+ * Controller of the presidentsClubApp
+ */
+angular.module('presidentsClubApp')
+    .controller('HomeCtrl', ['$scope', '$rootScope', '$location', 'AuthenticationService', 'settings', 'globals',
+        function($scope, $rootScope, $location, AuthenticationService, settings, globals) {
+
+            //Bounce to here if we have a user logged in
+            if (!$rootScope.globals.currentUser) {
+                $location.path('/');
+            } else {
+                $rootScope.cloud = false;
+            }
+
+            //Settings for handling the top nav items
+            settings.setValue('logo', true);
+            settings.setValue('back', false);
 
             // Continue to step 1 after successfull login
             $scope.next = function() {
