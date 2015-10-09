@@ -1,0 +1,151 @@
+<div class="panel panel-default">
+
+    <div class="form-heading">
+      <div class="wave">
+        <div>
+            <div class="pull-left">
+                <span class="step">&nbsp;</span><br/>
+                <span class="step-name">THE NOMINEE</span>
+            </div>
+            <div class="pull-right right">
+                <button type="button" class="btn btn-approve" ng-click="approve(nomineeModel.id)">APPROVE</button>
+                <button type="button" class="btn btn-deny" ng-click="deny(nomineeModel.id)">DENY</button>
+            </div>
+        </div>
+            
+      </div>
+    </div>
+
+    <div class="panel-body">
+      <div class="container form">
+        
+        <div class="row">
+          <div class="col-md-12 detail">
+            {{nomineeModel.get('salutation').name}}
+            <h1>{{nomineeModel.get('first')}} {{nomineeModel.get('last')}}</h1>
+            {{nomineeModel.get('title').name}}
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 detail">
+            Nominee's Employee Number<br/>
+            <span>{{nomineeModel.get('number')}}</span>
+          </div>
+          <div class="col-md-6 detail">
+            Sales Organization<br/>
+            <span>{{nomineeModel.get('so').name}}</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 detail">
+            Region<br/>
+            <span>{{nomineeModel.get('region').name}}</span>
+          </div>
+          <div class="col-md-6 detail">
+            Work Country<br/>
+            <span>{{nomineeModel.get('country').name}}</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 detail">
+            Work Address<br/>
+            <span>{{nomineeModel.get('address')}}</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 detail">
+            Office Phone Number<br/>
+            <span>{{formatPhone(nomineeModel.get('officeTel'))}}</span>
+          </div>
+          <div class="col-md-6 detail">
+            Mobile Phone Number<br/>
+            <span>{{formatPhone(nomineeModel.get('mobileTel'))}}</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 detail">
+            Email Address<br/>
+            <span>{{nomineeModel.get('email') | lowercase}}</span>
+          </div>
+        </div>
+
+        <div class="gray-container">
+          <div class="row">
+            <div class="col-md-6 detail">
+              Fiscal Year Sales Quota<br/>
+              <span>{{nomineeModel.get('performance').salesQuota | currency}}</span>
+            </div>
+            <div class="col-md-6 detail padding-left-50">
+              Actual Fiscal Year Sales<br/>
+              <span>{{nomineeModel.get('performance').sales | currency}}</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 detail">
+              Percent Sales Quota<br/>
+              <span>{{nomineeModel.get('performance').percentOver}}%</span>
+            </div>
+            <div class="col-md-6 detail padding-left-50">
+              Previous Year Percent of Quota<br/>
+              <span>{{nomineeModel.get('performance').percentLast}}%</span>
+            </div>
+          </div>
+        </div>
+          
+        <div class="row">
+          <div class="col-md-11 detail">
+            Sales Performance/Results<br/>
+            <div class="comment">{{nomineeModel.get('comments').performance}}</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-11 detail">
+            Sales and Planning Skills<br/>
+            <div class="comment">{{nomineeModel.get('comments').planning}}</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-11 detail">
+            Customer Relationship and Loyalty<br/>
+            <div class="comment">{{nomineeModel.get('comments').relationship}}</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-11 detail">
+            One Agilent Behavior<br/>
+            <div class="comment">{{nomineeModel.get('comments').behavior}}</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-11 detail">
+            Leadership/Role Model<br/>
+            <div class="comment">{{nomineeModel.get('comments').leadership}}</div>
+          </div>
+        </div>
+
+        <div class="gray-container">
+          <div class="row">
+            <div class="col-md-4 detail">
+              Nominator<br/>
+              <span>{{nomineeModel.get('nominator').first}} {{nomineeModel.get('nominator').last}}</span>
+            </div>
+            <div class="col-md-4 detail">
+              Nominator's email address<br/>
+              <span>{{nomineeModel.get('nominator').email | lowercase}}</span>
+            </div>
+            <div class="col-md-4 detail">
+              Work Phone Number<br/>
+              <span>{{formatPhone(nomineeModel.get('nominator').phone)}}</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+</div>

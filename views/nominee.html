@@ -83,14 +83,14 @@
                 <div class="row">
                     <div class="col col-md-3 col-xs-4" ng-class="{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine }">
                         <span class="required">*</span> Office Phone Number
-                        <input type="phone" name="phone" pattern="[0-9]*" class="form-control required" placeholder="" ng-model="nomineeModel.officeTel" ui-mask="(999) 999-9999" required>
+                        <input type="phone" name="phone" class="form-control required" placeholder="" ng-model="nomineeModel.officeTel" ui-mask="(999) 999-9999" required>
                         <p ng-show="userForm.phone.$invalid && !userForm.phone.$pristine" class="error">Phone is required.</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col col-md-3 col-xs-4" ng-class="{ 'has-error' : userForm.mobile.$invalid && !userForm.mobile.$pristine }">
                         <span class="required">*</span> Mobile Phone Number
-                        <input type="phone" name="mobile" pattern="[0-9]*" class="form-control required" placeholder="" ng-model="nomineeModel.mobileTel" ui-mask="(999) 999-9999" required>
+                        <input type="phone" name="mobile" class="form-control required" placeholder="" ng-model="nomineeModel.mobileTel" ui-mask="(999) 999-9999" required>
                         <p ng-show="userForm.mobile.$invalid && !userForm.mobile.$pristine" class="error">Mobile is required.</p>
                     </div>
                 </div>
@@ -145,7 +145,7 @@
                 <div class="row">
                     <div class="col col-md-3 col-xs-4" ng-class="{ 'has-error' : userForm.nomPhone.$invalid && !userForm.nomPhone.$pristine }">
                         <span class="required">*</span> Nominator's Work Phone Number
-                        <input type="phone" name="nomPhone" pattern="[0-9]*" class="form-control required" placeholder="" ng-model="nomineeModel.nominator.nom_phone" ui-mask="(999) 999-9999" required>
+                        <input type="phone" name="nomPhone" class="form-control required" placeholder="" ng-model="nomineeModel.nominator.nom_phone" ui-mask="(999) 999-9999" required>
                         <p ng-show="userForm.nomPhone.$invalid && !userForm.nomPhone.$pristine" class="error">Phone is required.</p>
                     </div>
                 </div>
