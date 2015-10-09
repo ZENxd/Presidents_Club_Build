@@ -131,7 +131,7 @@
                     </div>
                     <div class="col col-md-3 col-xs-4" ng-class="{ 'has-error' : userForm.nlast.$invalid && !userForm.nlast.$pristine }">
                         <span class="required">*</span> Nominator's Family/Last Name
-                        <input type="text" name="nlast" class="form-control required" placeholder="" ng-model="nomineeModel.nominator.last" required>
+                        <input type="text" name="nlast" class="form-control required" placeholder="" ng-model="nomineeModel.nominator.nom_last" required>
                         <p ng-show="userForm.nlast.$invalid && !userForm.nlast.$pristine" class="error">Last name is required.</p>
                     </div>
                 </div>
@@ -144,7 +144,7 @@
                 </div>
                 <div class="row">
                     <div class="col col-md-3 col-xs-4" ng-class="{ 'has-error' : userForm.nomPhone.$invalid && !userForm.nomPhone.$pristine }">
-                        <span class="required">*</span> Nominator's Work Phone Number
+                        <span class="required">*</span> Nominator's Phone Number
                         <input type="phone" name="nomPhone" class="form-control required" placeholder="" ng-model="nomineeModel.nominator.nom_phone" ui-mask="(999) 999-9999" required>
                         <p ng-show="userForm.nomPhone.$invalid && !userForm.nomPhone.$pristine" class="error">Phone is required.</p>
                     </div>
