@@ -24,7 +24,6 @@
           <div class="row">
             <div class="col col-md-3 col-xs-4" ng-class="{ 'has-error' : userForm.salesQuota.$invalid && !userForm.salesQuota.$pristine }">
               <span class="required">*</span> Fiscal Year Sales Quota in USD <br/>
-              <div class="eg">{{nomineeModel.performance.salesQuota | currency}}</div>
 
               <div class="currency">
                 <div class="input-group">
@@ -32,15 +31,17 @@
                   <input type="number" name="salesQuota" class="form-control" placeholder="" ng-model="nomineeModel.performance.salesQuota" required>
                 </div>
               </div>
-
               <p ng-show="userForm.salesQuota.$invalid && !userForm.salesQuota.$pristine" class="error">Employee Sales Quota is required.</p>
+            </div>
+
+            <div class="col col-md-3 col-xs-4">
+              <div class="eg">{{(nomineeModel.performance.salesQuota) ? (nomineeModel.performance.salesQuota | currency) : 'i.e. 1500000 (do not abbreviate)'}}</div>
             </div>
           </div>
 
           <div class="row">
             <div class="col col-md-3 col-xs-4" ng-class="{ 'has-error' : userForm.sales.$invalid && !userForm.sales.$pristine }">
               <span class="required">*</span> Actual Fiscal Year Sales in USD <br/>
-              <div class="eg">{{nomineeModel.performance.sales | currency}}</div>
 
               <div class="currency">
                 <div class="input-group">
@@ -48,15 +49,17 @@
                   <input type="number" name="sales" class="form-control" placeholder="" ng-model="nomineeModel.performance.sales" required>
                 </div>
               </div>
-              
               <p ng-show="userForm.sales.$invalid && !userForm.sales.$pristine" class="error">Employee Sales is required.</p>
+            </div>
+
+            <div class="col col-md-3 col-xs-4">
+              <div class="eg">{{(nomineeModel.performance.sales) ? (nomineeModel.performance.sales | currency) : 'i.e. 1710000 (do not abbreviate)'}}</div>
             </div>
           </div>
 
           <div class="row">
             <div class="col col-md-3 col-xs-4" ng-class="{ 'has-error' : userForm.percentOver.$invalid && !userForm.percentOver.$pristine }">
-              <span class="required">*</span> Percentage Over Sales Quota <br/>
-              <div class="eg">E.G. 110</div>
+              <span class="required">*</span> Percent of Sales Quota <br/>
 
               <div class="currency">
                 <div class="input-group">
@@ -67,13 +70,20 @@
               
               <p ng-show="userForm.percentOver.$invalid && !userForm.percentOver.$pristine" class="error">Precentage is required.</p>
             </div>
+
+            <div class="col col-md-3 col-xs-4">
+              <div class="eg">i.e. 110</div>
+            </div>
+          </div>
+
+          <div class="row" style="margin-bottom: -19px;">
+            <div class="col col-md-4 col-xs-5">
+              <span class="required">*</span> Previous Year Percent of Sales Quota
+            </div>
           </div>
 
           <div class="row">
             <div class="col col-md-3 col-xs-4" ng-class="{ 'has-error' : userForm.percentLast.$invalid && !userForm.percentLast.$pristine }">
-              <span class="required">*</span> Previous Year Percent of Quota <br/>
-              <div class="eg">E.G. 103</div>
-
               <div class="currency">
                 <div class="input-group">
                   <input type="number" name="percentLast" class="form-control" placeholder="" ng-model="nomineeModel.performance.percentLast" required>
@@ -82,6 +92,10 @@
               </div>
               
               <p ng-show="userForm.percentLast.$invalid && !userForm.percentLast.$pristine" class="error">Precentage is required.</p>
+            </div>
+
+            <div class="col col-md-3 col-xs-4">
+              <div class="eg" style="padding-top: 12px;">i.e. 103</div>
             </div>
           </div>
 

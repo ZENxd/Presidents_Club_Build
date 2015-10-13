@@ -16,9 +16,9 @@
 
           <div class="row">
             <div class="col col-md-8 col-xs-8" ng-class="{ 'has-error' : userForm.performance.$invalid && !userForm.performance.$pristine }">
-              <span class="required">*</span> Sales Performance/Results (70 words max)
-              <div class="eg">Please make brief comments with additional qualitative comments on results, track record of results.</div>
-              <textarea name="performance" class="form-control required" placeholder="" ng-model="nomineeModel.comments.performance" rows="5" cols="50" maximum-words-validation="70" required></textarea>
+              <span class="required">*</span> Sales Performance/Results (50 words max)
+              <div class="light">Please make brief comments with additional qualitative comments on results, track record of results.</div>
+              <textarea name="performance" class="form-control required" placeholder="" ng-model="nomineeModel.comments.performance" rows="5" cols="50" maximum-words-validation="50" required></textarea>
 
               <ng-messages for="userForm.performance.$error" ng-if="userForm.performance.$touched">
                 <ng-messages-include src="views/error-messages.html"></ng-messages-include>
@@ -29,9 +29,9 @@
 
           <div class="row">
             <div class="col col-md-8 col-xs-8" ng-class="{ 'has-error' : userForm.planning.$invalid && !userForm.planning.$pristine }">
-              <span class="required">*</span> Sales and Planning Skills (70 words max)
-              <div class="eg">Please make brief comments about how the nominee plans and manages the sales process and their accounts for the best results.</div>
-              <textarea name="planning" class="form-control required" placeholder="" ng-model="nomineeModel.comments.planning" rows="5" cols="50" maximum-words-validation="70" required></textarea>
+              <span class="required">*</span> Sales and Planning Skills (50 words max)
+              <div class="light">Please make brief comments about how the nominee plans and manages the sales process and their accounts for the best results.</div>
+              <textarea name="planning" class="form-control required" placeholder="" ng-model="nomineeModel.comments.planning" rows="5" cols="50" maximum-words-validation="50" required></textarea>
               
               <ng-messages for="userForm.planning.$error" ng-if="userForm.planning.$touched">
                 <ng-messages-include src="views/error-messages.html"></ng-messages-include>
@@ -42,9 +42,9 @@
 
           <div class="row">
             <div class="col col-md-8 col-xs-8" ng-class="{ 'has-error' : userForm.relationship.$invalid && !userForm.relationship.$pristine }">
-              <span class="required">*</span> Customer Relationship and Loyalty (70 words max)
-              <div class="eg">Please make brief comments on how the nominee manages their customer relationships and customer loyalty for Agilent.</div>
-              <textarea name="relationship" class="form-control required" placeholder="" ng-model="nomineeModel.comments.relationship" rows="5" cols="50" words-validation="70" required></textarea>
+              <span class="required">*</span> Customer Relationship and Loyalty (50 words max)
+              <div class="light">Please make brief comments on how the nominee manages their customer relationships and customer loyalty for Agilent.</div>
+              <textarea name="relationship" class="form-control required" placeholder="" ng-model="nomineeModel.comments.relationship" rows="5" cols="50" words-validation="50" required></textarea>
 
               <ng-messages for="userForm.relationship.$error" ng-if="userForm.relationship.$touched">
                 <ng-messages-include src="views/error-messages.html"></ng-messages-include>
@@ -55,9 +55,9 @@
 
           <div class="row">
             <div class="col col-md-8 col-xs-8" ng-class="{ 'has-error' : userForm.behavior.$invalid && !userForm.behavior.$pristine }">
-              <span class="required">*</span> One Agilent Behavior (70 words max)
-              <div class="eg">Please make brief comments on how the nominee excels in teamwork and disciplined collaboration to achieve results for Agilent.</div>
-              <textarea name="behavior" class="form-control required" placeholder="" ng-model="nomineeModel.comments.behavior" rows="5" cols="50" words-validation="70" required></textarea>
+              <span class="required">*</span> One Agilent Behavior (50 words max)
+              <div class="light">Please make brief comments on how the nominee excels in teamwork and disciplined collaboration to achieve results for Agilent.</div>
+              <textarea name="behavior" class="form-control required" placeholder="" ng-model="nomineeModel.comments.behavior" rows="5" cols="50" words-validation="50" required></textarea>
               
               <ng-messages for="userForm.behavior.$error" ng-if="userForm.behavior.$touched">
                 <ng-messages-include src="views/error-messages.html"></ng-messages-include>
@@ -68,9 +68,9 @@
 
           <div class="row">
             <div class="col col-md-8 col-xs-8" ng-class="{ 'has-error' : userForm.leadership.$invalid && !userForm.leadership.$pristine }">
-              <span class="required">*</span> Leadership/Role Model (70 words max)
-              <div class="eg">Please make brief comments on the nominee’s demonstrated leadership in the sales organization as well as their coaching and helping their team members.</div>
-              <textarea name="leadership" class="form-control required" placeholder="" ng-model="nomineeModel.comments.leadership" rows="5" cols="50" maximum-words-validation="70" required></textarea>
+              <span class="required">*</span> Leadership/Role Model (50 words max)
+              <div class="light">Please make brief comments on the nominee’s demonstrated leadership in the sales organization as well as their coaching and helping their team members.</div>
+              <textarea name="leadership" class="form-control required" placeholder="" ng-model="nomineeModel.comments.leadership" rows="5" cols="50" maximum-words-validation="50" required></textarea>
 
               <ng-messages for="userForm.leadership.$error" ng-if="userForm.leadership.$touched">
                 <ng-messages-include src="views/error-messages.html"></ng-messages-include>

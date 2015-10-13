@@ -9139,21 +9139,31 @@ a.pipe-left {
 /* line 393, ../../app/styles/main.scss */
 .form .eg {
   color: #CACACA;
-  font-size: 0.9em;
-  padding-left: 10px;
+  font-size: 0.8em;
   margin-bottom: 7px;
+  padding-top: 27px;
+  padding-left: 0;
+  font-style: italic;
   /*text-transform: uppercase;*/
 }
-/* line 400, ../../app/styles/main.scss */
+/* line 402, ../../app/styles/main.scss */
+.form .light {
+  color: #CACACA;
+  font-size: 0.9em;
+  margin-bottom: 7px;
+  padding-left: 10px;
+  /*text-transform: uppercase;*/
+}
+/* line 409, ../../app/styles/main.scss */
 .form .row {
   margin-top: 20px;
 }
-/* line 403, ../../app/styles/main.scss */
+/* line 412, ../../app/styles/main.scss */
 .form .error {
   color: #CA1D2D;
 }
 
-/* line 408, ../../app/styles/main.scss */
+/* line 417, ../../app/styles/main.scss */
 .btn-approve {
   background: #e2ba23;
   color: #ffffff;
@@ -9161,13 +9171,13 @@ a.pipe-left {
   letter-spacing: 2px;
 }
 
-/* line 415, ../../app/styles/main.scss */
+/* line 424, ../../app/styles/main.scss */
 .btn-approve > i {
   float: right;
   padding-top: 2px;
 }
 
-/* line 420, ../../app/styles/main.scss */
+/* line 429, ../../app/styles/main.scss */
 .btn-approve:hover,
 .btn-approve:focus,
 .btn-approve:active,
@@ -9176,14 +9186,14 @@ a.pipe-left {
   background: #CAA823;
 }
 
-/* line 428, ../../app/styles/main.scss */
+/* line 437, ../../app/styles/main.scss */
 .btn-approve:active,
 .btn-approve.active {
   background: #CAA823;
   box-shadow: none;
 }
 
-/* line 434, ../../app/styles/main.scss */
+/* line 443, ../../app/styles/main.scss */
 .btn-deny {
   background: #E6E6E6;
   color: #E02B2D;
@@ -9191,13 +9201,13 @@ a.pipe-left {
   letter-spacing: 2px;
 }
 
-/* line 441, ../../app/styles/main.scss */
+/* line 450, ../../app/styles/main.scss */
 .btn-deny > i {
   float: right;
   padding-top: 2px;
 }
 
-/* line 446, ../../app/styles/main.scss */
+/* line 455, ../../app/styles/main.scss */
 .btn-deny:hover,
 .btn-deny:focus,
 .btn-deny:active,
@@ -9206,14 +9216,14 @@ a.pipe-left {
   background: #B9B9B9;
 }
 
-/* line 454, ../../app/styles/main.scss */
+/* line 463, ../../app/styles/main.scss */
 .btn-deny:active,
 .btn-deny.active {
   background: #B9B9B9;
   box-shadow: none;
 }
 
-/* line 460, ../../app/styles/main.scss */
+/* line 469, ../../app/styles/main.scss */
 .btn-review {
   background: #E8E8E8;
   color: #7F7F7F;
@@ -9224,7 +9234,7 @@ a.pipe-left {
   font-weight: 700;
 }
 
-/* line 470, ../../app/styles/main.scss */
+/* line 479, ../../app/styles/main.scss */
 .btn-review:hover,
 .btn-review:focus,
 .btn-review:active,
@@ -9233,46 +9243,46 @@ a.pipe-left {
   background: #8F95A5;
 }
 
-/* line 478, ../../app/styles/main.scss */
+/* line 487, ../../app/styles/main.scss */
 .btn-review:active,
 .btn-review.active {
   background: #8F95A5;
   box-shadow: none;
 }
 
-/* line 484, ../../app/styles/main.scss */
+/* line 493, ../../app/styles/main.scss */
 .row.underline {
   border-bottom: 1px solid #ccc;
 }
 
-/* line 488, ../../app/styles/main.scss */
+/* line 497, ../../app/styles/main.scss */
 .listName {
   font-size: 1.1em;
   text-transform: uppercase;
 }
-/* line 491, ../../app/styles/main.scss */
+/* line 500, ../../app/styles/main.scss */
 .listName a {
   cursor: pointer;
   color: #363636;
 }
 
-/* line 497, ../../app/styles/main.scss */
+/* line 506, ../../app/styles/main.scss */
 .listTitle {
   font-size: 0.9em;
   color: #ccc;
 }
 
 /* Supporting marketing content */
-/* line 505, ../../app/styles/main.scss */
+/* line 514, ../../app/styles/main.scss */
 .marketing {
   margin: 40px 0;
 }
-/* line 507, ../../app/styles/main.scss */
+/* line 516, ../../app/styles/main.scss */
 .marketing p + h4 {
   margin-top: 28px;
 }
 
-/* line 512, ../../app/styles/main.scss */
+/* line 521, ../../app/styles/main.scss */
 .loader {
   background: #fff url(../images/ajax-loader.b04bbf31.gif) center 30px no-repeat;
   width: 100px;
@@ -9285,7 +9295,7 @@ a.pipe-left {
   color: #363B45;
 }
 
-/* line 524, ../../app/styles/main.scss */
+/* line 533, ../../app/styles/main.scss */
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
@@ -9294,7 +9304,7 @@ a.pipe-left {
 }
 
 /* modal */
-/* line 534, ../../app/styles/main.scss */
+/* line 543, ../../app/styles/main.scss */
 .close {
   float: right;
   font-size: 5em;
@@ -9305,25 +9315,25 @@ a.pipe-left {
   opacity: 1;
 }
 
-/* line 544, ../../app/styles/main.scss */
+/* line 553, ../../app/styles/main.scss */
 .modal-header {
   padding: 15px;
   border-bottom: none;
   min-height: 16.428571429px;
 }
 
-/* line 550, ../../app/styles/main.scss */
+/* line 559, ../../app/styles/main.scss */
 .modal-text {
   text-align: center;
   padding: 70px;
   padding-top: 15px;
 }
-/* line 554, ../../app/styles/main.scss */
+/* line 563, ../../app/styles/main.scss */
 .modal-text h3 {
   word-spacing: 5px;
 }
 
-/* line 559, ../../app/styles/main.scss */
+/* line 568, ../../app/styles/main.scss */
 hr {
   margin-right: 70px;
 }
@@ -9332,18 +9342,18 @@ hr {
 /* Portrait and Landscape */
 /* Portrait */
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-  /* line 575, ../../app/styles/main.scss */
+  /* line 584, ../../app/styles/main.scss */
   .container {
     max-width: 568px;
   }
 
-  /* line 578, ../../app/styles/main.scss */
+  /* line 587, ../../app/styles/main.scss */
   .container.heading {
     color: #fff;
     text-align: center;
     margin-top: 20px;
   }
-  /* line 582, ../../app/styles/main.scss */
+  /* line 591, ../../app/styles/main.scss */
   .container.heading h1 {
     font-size: 2em;
     font-family: 'Roboto Condensed', sans-serif;
@@ -9351,38 +9361,38 @@ hr {
     letter-spacing: 10px;
     font-weight: 600;
   }
-  /* line 589, ../../app/styles/main.scss */
+  /* line 598, ../../app/styles/main.scss */
   .container.heading h4 {
     font-size: 1em;
     letter-spacing: 3px;
   }
 
-  /* line 594, ../../app/styles/main.scss */
+  /* line 603, ../../app/styles/main.scss */
   .info {
     vertical-align: top;
     font-family: 'Roboto', sans-serif;
     margin-top: 10px;
     margin-left: 20px;
   }
-  /* line 599, ../../app/styles/main.scss */
+  /* line 608, ../../app/styles/main.scss */
   .info .heading {
     font-size: 0.9em;
     color: #525252;
     font-weight: 600;
   }
 
-  /* line 605, ../../app/styles/main.scss */
+  /* line 614, ../../app/styles/main.scss */
   .lead {
     font-size: 0.8em;
     letter-spacing: 3px;
   }
 
-  /* line 609, ../../app/styles/main.scss */
+  /* line 618, ../../app/styles/main.scss */
   .seal {
     display: none;
   }
 
-  /* line 612, ../../app/styles/main.scss */
+  /* line 621, ../../app/styles/main.scss */
   .seal-phone {
     background: url(../images/seal-iphone.e15ff464.png);
     width: 30px;
@@ -9390,17 +9400,17 @@ hr {
     display: inline-block;
   }
 
-  /* line 618, ../../app/styles/main.scss */
+  /* line 627, ../../app/styles/main.scss */
   .footer-logo {
     display: none;
   }
 
-  /* line 621, ../../app/styles/main.scss */
+  /* line 630, ../../app/styles/main.scss */
   .copyright {
     font-size: 0.9em;
   }
 
-  /* line 624, ../../app/styles/main.scss */
+  /* line 633, ../../app/styles/main.scss */
   .phone-hidden {
     display: none;
   }
@@ -9411,13 +9421,13 @@ hr {
 /*iPad in landscape*/
 /*iPad in portrait*/
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  /* line 651, ../../app/styles/main.scss */
+  /* line 660, ../../app/styles/main.scss */
   .container {
     max-width: 900px;
   }
 
   /* Remove the padding we set earlier */
-  /* line 655, ../../app/styles/main.scss */
+  /* line 664, ../../app/styles/main.scss */
   .header,
   .marketing,
   .footer {
@@ -9426,34 +9436,34 @@ padding-right: 0;*/
   }
 
   /* Space out the masthead */
-  /* line 662, ../../app/styles/main.scss */
+  /* line 671, ../../app/styles/main.scss */
   .header {
     margin-bottom: 30px;
   }
 
-  /* line 665, ../../app/styles/main.scss */
+  /* line 674, ../../app/styles/main.scss */
   .navbar-right {
     float: right !important;
     margin-top: 20px;
   }
 
   /* Remove the bottom border on the panel for visual effect */
-  /* line 670, ../../app/styles/main.scss */
+  /* line 679, ../../app/styles/main.scss */
   .panel {
     border-bottom: 0;
   }
-  /* line 672, ../../app/styles/main.scss */
+  /* line 681, ../../app/styles/main.scss */
   .panel hr {
     margin-right: 80px;
   }
 
-  /* line 676, ../../app/styles/main.scss */
+  /* line 685, ../../app/styles/main.scss */
   .container.heading {
     color: #fff;
     text-align: center;
     margin-top: 20px;
   }
-  /* line 680, ../../app/styles/main.scss */
+  /* line 689, ../../app/styles/main.scss */
   .container.heading h1 {
     font-size: 3.5em;
     font-family: 'Roboto Condensed', sans-serif;
@@ -9461,106 +9471,106 @@ padding-right: 0;*/
     letter-spacing: 10px;
     font-weight: 600;
   }
-  /* line 687, ../../app/styles/main.scss */
+  /* line 696, ../../app/styles/main.scss */
   .container.heading h4 {
     letter-spacing: 3px;
   }
 
-  /* line 691, ../../app/styles/main.scss */
+  /* line 700, ../../app/styles/main.scss */
   .info {
     vertical-align: top;
     font-family: 'Roboto', sans-serif;
     margin-top: 10px;
     margin-left: 20px;
   }
-  /* line 696, ../../app/styles/main.scss */
+  /* line 705, ../../app/styles/main.scss */
   .info .heading {
     font-size: 1.1em;
     color: #525252;
     font-weight: 600;
   }
 }
-/* line 704, ../../app/styles/main.scss */
+/* line 713, ../../app/styles/main.scss */
 .pad-top-8 {
   padding-top: 8px;
 }
 
-/* line 708, ../../app/styles/main.scss */
+/* line 717, ../../app/styles/main.scss */
 .margin-top-10 {
   margin-top: 10px;
 }
 
-/* line 712, ../../app/styles/main.scss */
+/* line 721, ../../app/styles/main.scss */
 .margin-top-20 {
   margin-top: 20px;
 }
 
-/* line 716, ../../app/styles/main.scss */
+/* line 725, ../../app/styles/main.scss */
 .margin-top-30 {
   margin-top: 30px;
 }
 
-/* line 720, ../../app/styles/main.scss */
+/* line 729, ../../app/styles/main.scss */
 .padding-left-20 {
   padding-left: 20px;
 }
 
-/* line 724, ../../app/styles/main.scss */
+/* line 733, ../../app/styles/main.scss */
 .padding-left-50 {
   padding-left: 50px;
 }
 
-/* line 728, ../../app/styles/main.scss */
+/* line 737, ../../app/styles/main.scss */
 .padding-right-5 {
   padding-right: 5px;
 }
 
-/* line 732, ../../app/styles/main.scss */
+/* line 741, ../../app/styles/main.scss */
 .padding-right-10 {
   padding-right: 10px;
 }
 
-/* line 736, ../../app/styles/main.scss */
+/* line 745, ../../app/styles/main.scss */
 .padding-right-20 {
   padding-right: 20px;
 }
 
-/* line 740, ../../app/styles/main.scss */
+/* line 749, ../../app/styles/main.scss */
 .padding-top-20 {
   padding-top: 20px;
 }
 
-/* line 744, ../../app/styles/main.scss */
+/* line 753, ../../app/styles/main.scss */
 .padding-top-30 {
   padding-top: 30px;
 }
 
-/* line 748, ../../app/styles/main.scss */
+/* line 757, ../../app/styles/main.scss */
 .padding-top-50 {
   padding-top: 50px;
 }
 
-/* line 752, ../../app/styles/main.scss */
+/* line 761, ../../app/styles/main.scss */
 .padding-bottom-20 {
   padding-bottom: 20px;
 }
 
-/* line 756, ../../app/styles/main.scss */
+/* line 765, ../../app/styles/main.scss */
 .padding-bottom-30 {
   padding-bottom: 30px;
 }
 
-/* line 760, ../../app/styles/main.scss */
+/* line 769, ../../app/styles/main.scss */
 .padding-bottom-50 {
   padding-bottom: 50px;
 }
 
-/* line 764, ../../app/styles/main.scss */
+/* line 773, ../../app/styles/main.scss */
 .margin-bottom-5 {
   margin-bottom: 5px;
 }
 
-/* line 768, ../../app/styles/main.scss */
+/* line 777, ../../app/styles/main.scss */
 .margin-bottom-10 {
   margin-bottom: 10px;
 }
