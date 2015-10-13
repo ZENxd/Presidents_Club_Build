@@ -1,14 +1,6 @@
-<div class="container heading" style="width:700px;">
-    <p class="lead">
-        <img src="../images/seal.4a53f1b6.png">
-        <p class="lead">
-            THE PRESIDENT'S CLUB
-        </p>
-        <h1>2015 NOMINEES</h1>
-    </p>
-    <p class="margin-top-30">
-        Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo.
-    </p>
+<div class="container heading">
+        <h1>THE PRESIDENT'S CLUB</h1>
+        <h2>2015 NOMINEES</h2>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading" style="background-color:#F5F3E3;color:#d3a907;font-size:0.8em;">
@@ -28,21 +20,21 @@
         </div>
     </div>
     <div class="panel-body">
-        <div class="row padding-top-30 padding-bottom-30" ng-class="{'underline' : !$last}" ng-repeat="nomineeModel in nomineeModels">
+        <div class="row padding-top-30 padding-bottom-30" ng-class="{'underline' : !$last}" ng-repeat="nominee in nomineesModel">
             <div class="col col-md-4">
-                <span class="listName"><a ng-click="edit(nomineeModel.id)">{{nomineeModel.get('first')}} {{nomineeModel.get('last')}}</a></span><br/>
-                <span class="listTitle">{{nomineeModel.get('title').name}}</span>
+                <span class="listName"><a ng-click="edit(nominee.id)">{{nominee.first}} {{nominee.last}}</a></span><br/>
+                <span class="listTitle">{{nominee.title.name}}</span>
             </div>
             <div class="col col-md-3">
-                {{nomineeModel.get('nominator').first}} {{nomineeModel.get('nominator').last}}
+                {{nominee.nominator.first}} {{nominee.nominator.last}}
             </div>
-            <div class="col col-md-3" ng-style="myColor={color:(nomineeModel.get('nomStatus') === 'Denied') ? '#CA4045' : 
-                                                        (nomineeModel.get('nomStatus') === 'Approved') ? '#d3a907' : '#ccc'}">
-                {{nomineeModel.get('nomStatus') ? nomineeModel.get('nomStatus') : 'Awaiting Approval'}}
+            <div class="col col-md-3" ng-style="myColor={color:(nominee.nomStatus === 'Denied') ? '#CA4045' : 
+                                                        (nominee.nomStatus === 'Approved') ? '#00B601' : '#ccc'}">
+                <i ng-show="nominee.nomStatus" ng-class="{'fa fa-check' : nominee.nomStatus === 'Approved', 'fa fa-close' : nominee.nomStatus === 'Denied'}"></i> {{nominee.nomStatus ? nominee.nomStatus : 'Awaiting Approval'}}
               
             </div>
             <div class="col col-md-2" style="text-align:center;">
-                <button type="button" class="btn btn-review" ng-click="detail(nomineeModel.id)">REVIEW</button>
+                <button type="button" class="btn btn-review" ng-click="detail(nominee.id)">REVIEW</button>
             </div>
         </div>
     </div>

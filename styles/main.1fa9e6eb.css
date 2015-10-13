@@ -8875,36 +8875,44 @@ a.pipe-left {
   font-weight: 600;
 }
 /* line 165, ../../app/styles/main.scss */
+.container.heading h2 {
+  font-size: 3.5em;
+  font-family: 'Roboto Condensed', sans-serif;
+  margin-top: -10px;
+  letter-spacing: 5px;
+}
+/* line 171, ../../app/styles/main.scss */
 .container.heading h4 {
   letter-spacing: 3px;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
-/* line 170, ../../app/styles/main.scss */
+/* line 177, ../../app/styles/main.scss */
 .lead {
   font-size: 1.2em;
   letter-spacing: 5px;
 }
 
-/* line 176, ../../app/styles/main.scss */
+/* line 183, ../../app/styles/main.scss */
 .detail h1 {
   color: #363636;
   font-family: 'Roboto Condensed', sans-serif;
   margin-top: 5px;
   margin-bottom: 5px;
 }
-/* line 182, ../../app/styles/main.scss */
+/* line 189, ../../app/styles/main.scss */
 .detail span {
   color: #515151;
   font-size: 1.7em;
 }
-/* line 186, ../../app/styles/main.scss */
+/* line 193, ../../app/styles/main.scss */
 .detail .comment {
   font-size: 1.2em;
   margin-top: 5px;
   color: #646464;
 }
 
-/* line 193, ../../app/styles/main.scss */
+/* line 200, ../../app/styles/main.scss */
 .gray-container {
   margin-top: 20px;
   margin-left: -20px;
@@ -8915,7 +8923,7 @@ a.pipe-left {
   border-radius: 4px;
 }
 
-/* line 203, ../../app/styles/main.scss */
+/* line 210, ../../app/styles/main.scss */
 .btn-primary.light {
   background-color: #e2ba23;
   border-color: #a0c6ea;
@@ -8924,15 +8932,15 @@ a.pipe-left {
 }
 
 /* Main marketing message and sign up button */
-/* line 213, ../../app/styles/main.scss */
+/* line 220, ../../app/styles/main.scss */
 .panel {
   margin-bottom: 150px;
 }
-/* line 215, ../../app/styles/main.scss */
+/* line 222, ../../app/styles/main.scss */
 .panel .form-heading {
   color: #d3a907;
 }
-/* line 217, ../../app/styles/main.scss */
+/* line 224, ../../app/styles/main.scss */
 .panel .form-heading .wave {
   width: 100%;
   height: 45px;
@@ -8940,17 +8948,17 @@ a.pipe-left {
   background-repeat: repeat-x;
   background-position: bottom left;
 }
-/* line 224, ../../app/styles/main.scss */
+/* line 231, ../../app/styles/main.scss */
 .panel .form-heading .wave > div {
   margin-left: 40px;
   margin-top: 20px;
   width: auto;
 }
-/* line 229, ../../app/styles/main.scss */
+/* line 236, ../../app/styles/main.scss */
 .panel .form-heading .step {
   margin-left: 10px;
 }
-/* line 232, ../../app/styles/main.scss */
+/* line 239, ../../app/styles/main.scss */
 .panel .form-heading .step-name {
   font-size: 1.8em;
   background-color: #fff;
@@ -8958,7 +8966,7 @@ a.pipe-left {
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 300;
 }
-/* line 239, ../../app/styles/main.scss */
+/* line 246, ../../app/styles/main.scss */
 .panel .form-heading .required {
   color: #C3C3C3;
   font-size: 0.8em;
@@ -8966,91 +8974,91 @@ a.pipe-left {
   font-weight: 400;
   margin-right: 20px;
 }
-/* line 246, ../../app/styles/main.scss */
+/* line 253, ../../app/styles/main.scss */
 .panel .form-heading .right {
   padding-top: 20px;
   margin-right: 35px;
 }
 
-/* line 253, ../../app/styles/main.scss */
+/* line 260, ../../app/styles/main.scss */
 .login {
   padding: 0px 30px 20px 30px;
   color: #8B8B8B;
   font-size: 0.9em;
 }
-/* line 257, ../../app/styles/main.scss */
+/* line 264, ../../app/styles/main.scss */
 .login .btn {
   color: #fff;
 }
-/* line 260, ../../app/styles/main.scss */
+/* line 267, ../../app/styles/main.scss */
 .login .btn-login {
   background: #e2ba23;
   font-size: 1.2em;
   letter-spacing: 2px;
   height: 50px;
 }
-/* line 266, ../../app/styles/main.scss */
+/* line 273, ../../app/styles/main.scss */
 .login .btn-login:hover,
 .login .btn-login:focus,
 .login .btn-login:active,
 .login .btn-login.active {
   background: #CAA823;
 }
-/* line 272, ../../app/styles/main.scss */
+/* line 279, ../../app/styles/main.scss */
 .login .btn-login:active,
 .login .btn-login.active {
   background: #CAA823;
   box-shadow: none;
 }
-/* line 277, ../../app/styles/main.scss */
+/* line 284, ../../app/styles/main.scss */
 .login .row {
   margin-top: 10px;
 }
-/* line 280, ../../app/styles/main.scss */
+/* line 287, ../../app/styles/main.scss */
 .login .error {
   color: #CA1D2D;
 }
 
 /* home */
-/* line 288, ../../app/styles/main.scss */
+/* line 295, ../../app/styles/main.scss */
 .info {
   vertical-align: top;
   font-family: 'Roboto', sans-serif;
   margin-top: 10px;
   margin-left: 20px;
 }
-/* line 293, ../../app/styles/main.scss */
+/* line 300, ../../app/styles/main.scss */
 .info .heading {
   font-size: 1.2em;
   color: #525252;
   font-weight: 600;
 }
-/* line 298, ../../app/styles/main.scss */
+/* line 305, ../../app/styles/main.scss */
 .info .normal {
   line-height: 25px;
   color: #888888;
   font-size: 0.9em;
 }
-/* line 303, ../../app/styles/main.scss */
+/* line 310, ../../app/styles/main.scss */
 .info ul.none {
   list-style: none;
 }
-/* line 306, ../../app/styles/main.scss */
+/* line 313, ../../app/styles/main.scss */
 .info li {
   margin-top: 30px;
   color: #888888;
   font-size: 0.9em;
 }
-/* line 310, ../../app/styles/main.scss */
+/* line 317, ../../app/styles/main.scss */
 .info li .detail {
   color: #525252;
   font-weight: 600;
 }
-/* line 315, ../../app/styles/main.scss */
+/* line 322, ../../app/styles/main.scss */
 .info li:first-child {
   margin-top: 0;
 }
-/* line 318, ../../app/styles/main.scss */
+/* line 325, ../../app/styles/main.scss */
 .info .timeline {
   display: inline-block;
   margin-top: 10px;
@@ -9060,7 +9068,7 @@ a.pipe-left {
   background-repeat: no-repeat;
   background-position: top left;
 }
-/* line 327, ../../app/styles/main.scss */
+/* line 334, ../../app/styles/main.scss */
 .info .btn {
   color: #d3a907;
   background: #e2ba23;
@@ -9070,14 +9078,14 @@ a.pipe-left {
   width: 300px;
   height: 50px;
 }
-/* line 336, ../../app/styles/main.scss */
+/* line 343, ../../app/styles/main.scss */
 .info .btn:hover,
 .info .btn:focus,
 .info .btn:active,
 .info .btn.active {
   background: #CAA823;
 }
-/* line 342, ../../app/styles/main.scss */
+/* line 349, ../../app/styles/main.scss */
 .info .btn:active,
 .info .btn.active {
   background: #CAA823;
@@ -9085,23 +9093,23 @@ a.pipe-left {
 }
 
 /* Forms */
-/* line 352, ../../app/styles/main.scss */
+/* line 359, ../../app/styles/main.scss */
 .form {
   padding: 0px 30px 20px 30px;
   color: #8B8B8B;
   font-size: 0.9em;
 }
-/* line 356, ../../app/styles/main.scss */
+/* line 363, ../../app/styles/main.scss */
 .form .btn {
   color: #d3a907;
   text-align: left;
 }
-/* line 360, ../../app/styles/main.scss */
+/* line 367, ../../app/styles/main.scss */
 .form .btn .caret {
   float: right;
   margin-top: 8px;
 }
-/* line 364, ../../app/styles/main.scss */
+/* line 371, ../../app/styles/main.scss */
 .form .btn-form {
   background: #e2ba23;
   color: #ffffff;
@@ -9109,11 +9117,11 @@ a.pipe-left {
   letter-spacing: 2px;
   height: 50px;
 }
-/* line 371, ../../app/styles/main.scss */
+/* line 378, ../../app/styles/main.scss */
 .form .btn-form > i {
   padding-top: 2px;
 }
-/* line 374, ../../app/styles/main.scss */
+/* line 381, ../../app/styles/main.scss */
 .form .btn-form:hover,
 .form .btn-form:focus,
 .form .btn-form:active,
@@ -9121,22 +9129,22 @@ a.pipe-left {
 .form .open > .dropdown-toggle.btn-form {
   background: #CAA823;
 }
-/* line 381, ../../app/styles/main.scss */
+/* line 388, ../../app/styles/main.scss */
 .form .btn-form:active,
 .form .btn-form.active {
   background: #CAA823;
   box-shadow: none;
 }
-/* line 386, ../../app/styles/main.scss */
+/* line 393, ../../app/styles/main.scss */
 .form .dropdown-menu > li > a {
   color: #d3a907;
   cursor: pointer;
 }
-/* line 390, ../../app/styles/main.scss */
+/* line 397, ../../app/styles/main.scss */
 .form .required {
   color: #d3a907;
 }
-/* line 393, ../../app/styles/main.scss */
+/* line 400, ../../app/styles/main.scss */
 .form .eg {
   color: #CACACA;
   font-size: 0.8em;
@@ -9146,7 +9154,7 @@ a.pipe-left {
   font-style: italic;
   /*text-transform: uppercase;*/
 }
-/* line 402, ../../app/styles/main.scss */
+/* line 409, ../../app/styles/main.scss */
 .form .light {
   color: #CACACA;
   font-size: 0.9em;
@@ -9154,16 +9162,16 @@ a.pipe-left {
   padding-left: 10px;
   /*text-transform: uppercase;*/
 }
-/* line 409, ../../app/styles/main.scss */
+/* line 416, ../../app/styles/main.scss */
 .form .row {
   margin-top: 20px;
 }
-/* line 412, ../../app/styles/main.scss */
+/* line 419, ../../app/styles/main.scss */
 .form .error {
   color: #CA1D2D;
 }
 
-/* line 417, ../../app/styles/main.scss */
+/* line 424, ../../app/styles/main.scss */
 .btn-approve {
   background: #e2ba23;
   color: #ffffff;
@@ -9171,13 +9179,13 @@ a.pipe-left {
   letter-spacing: 2px;
 }
 
-/* line 424, ../../app/styles/main.scss */
+/* line 431, ../../app/styles/main.scss */
 .btn-approve > i {
   float: right;
   padding-top: 2px;
 }
 
-/* line 429, ../../app/styles/main.scss */
+/* line 436, ../../app/styles/main.scss */
 .btn-approve:hover,
 .btn-approve:focus,
 .btn-approve:active,
@@ -9186,14 +9194,14 @@ a.pipe-left {
   background: #CAA823;
 }
 
-/* line 437, ../../app/styles/main.scss */
+/* line 444, ../../app/styles/main.scss */
 .btn-approve:active,
 .btn-approve.active {
   background: #CAA823;
   box-shadow: none;
 }
 
-/* line 443, ../../app/styles/main.scss */
+/* line 450, ../../app/styles/main.scss */
 .btn-deny {
   background: #E6E6E6;
   color: #E02B2D;
@@ -9201,13 +9209,13 @@ a.pipe-left {
   letter-spacing: 2px;
 }
 
-/* line 450, ../../app/styles/main.scss */
+/* line 457, ../../app/styles/main.scss */
 .btn-deny > i {
   float: right;
   padding-top: 2px;
 }
 
-/* line 455, ../../app/styles/main.scss */
+/* line 462, ../../app/styles/main.scss */
 .btn-deny:hover,
 .btn-deny:focus,
 .btn-deny:active,
@@ -9216,14 +9224,14 @@ a.pipe-left {
   background: #B9B9B9;
 }
 
-/* line 463, ../../app/styles/main.scss */
+/* line 470, ../../app/styles/main.scss */
 .btn-deny:active,
 .btn-deny.active {
   background: #B9B9B9;
   box-shadow: none;
 }
 
-/* line 469, ../../app/styles/main.scss */
+/* line 476, ../../app/styles/main.scss */
 .btn-review {
   background: #E8E8E8;
   color: #7F7F7F;
@@ -9234,7 +9242,7 @@ a.pipe-left {
   font-weight: 700;
 }
 
-/* line 479, ../../app/styles/main.scss */
+/* line 486, ../../app/styles/main.scss */
 .btn-review:hover,
 .btn-review:focus,
 .btn-review:active,
@@ -9243,46 +9251,46 @@ a.pipe-left {
   background: #8F95A5;
 }
 
-/* line 487, ../../app/styles/main.scss */
+/* line 494, ../../app/styles/main.scss */
 .btn-review:active,
 .btn-review.active {
   background: #8F95A5;
   box-shadow: none;
 }
 
-/* line 493, ../../app/styles/main.scss */
+/* line 500, ../../app/styles/main.scss */
 .row.underline {
   border-bottom: 1px solid #ccc;
 }
 
-/* line 497, ../../app/styles/main.scss */
+/* line 504, ../../app/styles/main.scss */
 .listName {
   font-size: 1.1em;
   text-transform: uppercase;
 }
-/* line 500, ../../app/styles/main.scss */
+/* line 507, ../../app/styles/main.scss */
 .listName a {
   cursor: pointer;
   color: #363636;
 }
 
-/* line 506, ../../app/styles/main.scss */
+/* line 513, ../../app/styles/main.scss */
 .listTitle {
   font-size: 0.9em;
   color: #ccc;
 }
 
 /* Supporting marketing content */
-/* line 514, ../../app/styles/main.scss */
+/* line 521, ../../app/styles/main.scss */
 .marketing {
   margin: 40px 0;
 }
-/* line 516, ../../app/styles/main.scss */
+/* line 523, ../../app/styles/main.scss */
 .marketing p + h4 {
   margin-top: 28px;
 }
 
-/* line 521, ../../app/styles/main.scss */
+/* line 528, ../../app/styles/main.scss */
 .loader {
   background: #fff url(../images/ajax-loader.b04bbf31.gif) center 30px no-repeat;
   width: 100px;
@@ -9295,7 +9303,7 @@ a.pipe-left {
   color: #363B45;
 }
 
-/* line 533, ../../app/styles/main.scss */
+/* line 540, ../../app/styles/main.scss */
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
@@ -9304,7 +9312,7 @@ a.pipe-left {
 }
 
 /* modal */
-/* line 543, ../../app/styles/main.scss */
+/* line 550, ../../app/styles/main.scss */
 .close {
   float: right;
   font-size: 5em;
@@ -9315,25 +9323,25 @@ a.pipe-left {
   opacity: 1;
 }
 
-/* line 553, ../../app/styles/main.scss */
+/* line 560, ../../app/styles/main.scss */
 .modal-header {
   padding: 15px;
   border-bottom: none;
   min-height: 16.428571429px;
 }
 
-/* line 559, ../../app/styles/main.scss */
+/* line 566, ../../app/styles/main.scss */
 .modal-text {
   text-align: center;
   padding: 70px;
   padding-top: 15px;
 }
-/* line 563, ../../app/styles/main.scss */
+/* line 570, ../../app/styles/main.scss */
 .modal-text h3 {
   word-spacing: 5px;
 }
 
-/* line 568, ../../app/styles/main.scss */
+/* line 575, ../../app/styles/main.scss */
 hr {
   margin-right: 70px;
 }
@@ -9342,18 +9350,18 @@ hr {
 /* Portrait and Landscape */
 /* Portrait */
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-  /* line 584, ../../app/styles/main.scss */
+  /* line 591, ../../app/styles/main.scss */
   .container {
     max-width: 568px;
   }
 
-  /* line 587, ../../app/styles/main.scss */
+  /* line 594, ../../app/styles/main.scss */
   .container.heading {
     color: #fff;
     text-align: center;
     margin-top: 20px;
   }
-  /* line 591, ../../app/styles/main.scss */
+  /* line 598, ../../app/styles/main.scss */
   .container.heading h1 {
     font-size: 2em;
     font-family: 'Roboto Condensed', sans-serif;
@@ -9361,38 +9369,38 @@ hr {
     letter-spacing: 10px;
     font-weight: 600;
   }
-  /* line 598, ../../app/styles/main.scss */
+  /* line 605, ../../app/styles/main.scss */
   .container.heading h4 {
     font-size: 1em;
     letter-spacing: 3px;
   }
 
-  /* line 603, ../../app/styles/main.scss */
+  /* line 610, ../../app/styles/main.scss */
   .info {
     vertical-align: top;
     font-family: 'Roboto', sans-serif;
     margin-top: 10px;
     margin-left: 20px;
   }
-  /* line 608, ../../app/styles/main.scss */
+  /* line 615, ../../app/styles/main.scss */
   .info .heading {
     font-size: 0.9em;
     color: #525252;
     font-weight: 600;
   }
 
-  /* line 614, ../../app/styles/main.scss */
+  /* line 621, ../../app/styles/main.scss */
   .lead {
     font-size: 0.8em;
     letter-spacing: 3px;
   }
 
-  /* line 618, ../../app/styles/main.scss */
+  /* line 625, ../../app/styles/main.scss */
   .seal {
     display: none;
   }
 
-  /* line 621, ../../app/styles/main.scss */
+  /* line 628, ../../app/styles/main.scss */
   .seal-phone {
     background: url(../images/seal-iphone.e15ff464.png);
     width: 30px;
@@ -9400,17 +9408,17 @@ hr {
     display: inline-block;
   }
 
-  /* line 627, ../../app/styles/main.scss */
+  /* line 634, ../../app/styles/main.scss */
   .footer-logo {
     display: none;
   }
 
-  /* line 630, ../../app/styles/main.scss */
+  /* line 637, ../../app/styles/main.scss */
   .copyright {
     font-size: 0.9em;
   }
 
-  /* line 633, ../../app/styles/main.scss */
+  /* line 640, ../../app/styles/main.scss */
   .phone-hidden {
     display: none;
   }
@@ -9421,13 +9429,13 @@ hr {
 /*iPad in landscape*/
 /*iPad in portrait*/
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  /* line 660, ../../app/styles/main.scss */
+  /* line 667, ../../app/styles/main.scss */
   .container {
     max-width: 900px;
   }
 
   /* Remove the padding we set earlier */
-  /* line 664, ../../app/styles/main.scss */
+  /* line 671, ../../app/styles/main.scss */
   .header,
   .marketing,
   .footer {
@@ -9436,34 +9444,34 @@ padding-right: 0;*/
   }
 
   /* Space out the masthead */
-  /* line 671, ../../app/styles/main.scss */
+  /* line 678, ../../app/styles/main.scss */
   .header {
     margin-bottom: 30px;
   }
 
-  /* line 674, ../../app/styles/main.scss */
+  /* line 681, ../../app/styles/main.scss */
   .navbar-right {
     float: right !important;
     margin-top: 20px;
   }
 
   /* Remove the bottom border on the panel for visual effect */
-  /* line 679, ../../app/styles/main.scss */
+  /* line 686, ../../app/styles/main.scss */
   .panel {
     border-bottom: 0;
   }
-  /* line 681, ../../app/styles/main.scss */
+  /* line 688, ../../app/styles/main.scss */
   .panel hr {
     margin-right: 80px;
   }
 
-  /* line 685, ../../app/styles/main.scss */
+  /* line 692, ../../app/styles/main.scss */
   .container.heading {
     color: #fff;
     text-align: center;
     margin-top: 20px;
   }
-  /* line 689, ../../app/styles/main.scss */
+  /* line 696, ../../app/styles/main.scss */
   .container.heading h1 {
     font-size: 3.5em;
     font-family: 'Roboto Condensed', sans-serif;
@@ -9471,106 +9479,106 @@ padding-right: 0;*/
     letter-spacing: 10px;
     font-weight: 600;
   }
-  /* line 696, ../../app/styles/main.scss */
+  /* line 703, ../../app/styles/main.scss */
   .container.heading h4 {
     letter-spacing: 3px;
   }
 
-  /* line 700, ../../app/styles/main.scss */
+  /* line 707, ../../app/styles/main.scss */
   .info {
     vertical-align: top;
     font-family: 'Roboto', sans-serif;
     margin-top: 10px;
     margin-left: 20px;
   }
-  /* line 705, ../../app/styles/main.scss */
+  /* line 712, ../../app/styles/main.scss */
   .info .heading {
     font-size: 1.1em;
     color: #525252;
     font-weight: 600;
   }
 }
-/* line 713, ../../app/styles/main.scss */
+/* line 720, ../../app/styles/main.scss */
 .pad-top-8 {
   padding-top: 8px;
 }
 
-/* line 717, ../../app/styles/main.scss */
+/* line 724, ../../app/styles/main.scss */
 .margin-top-10 {
   margin-top: 10px;
 }
 
-/* line 721, ../../app/styles/main.scss */
+/* line 728, ../../app/styles/main.scss */
 .margin-top-20 {
   margin-top: 20px;
 }
 
-/* line 725, ../../app/styles/main.scss */
+/* line 732, ../../app/styles/main.scss */
 .margin-top-30 {
   margin-top: 30px;
 }
 
-/* line 729, ../../app/styles/main.scss */
+/* line 736, ../../app/styles/main.scss */
 .padding-left-20 {
   padding-left: 20px;
 }
 
-/* line 733, ../../app/styles/main.scss */
+/* line 740, ../../app/styles/main.scss */
 .padding-left-50 {
   padding-left: 50px;
 }
 
-/* line 737, ../../app/styles/main.scss */
+/* line 744, ../../app/styles/main.scss */
 .padding-right-5 {
   padding-right: 5px;
 }
 
-/* line 741, ../../app/styles/main.scss */
+/* line 748, ../../app/styles/main.scss */
 .padding-right-10 {
   padding-right: 10px;
 }
 
-/* line 745, ../../app/styles/main.scss */
+/* line 752, ../../app/styles/main.scss */
 .padding-right-20 {
   padding-right: 20px;
 }
 
-/* line 749, ../../app/styles/main.scss */
+/* line 756, ../../app/styles/main.scss */
 .padding-top-20 {
   padding-top: 20px;
 }
 
-/* line 753, ../../app/styles/main.scss */
+/* line 760, ../../app/styles/main.scss */
 .padding-top-30 {
   padding-top: 30px;
 }
 
-/* line 757, ../../app/styles/main.scss */
+/* line 764, ../../app/styles/main.scss */
 .padding-top-50 {
   padding-top: 50px;
 }
 
-/* line 761, ../../app/styles/main.scss */
+/* line 768, ../../app/styles/main.scss */
 .padding-bottom-20 {
   padding-bottom: 20px;
 }
 
-/* line 765, ../../app/styles/main.scss */
+/* line 772, ../../app/styles/main.scss */
 .padding-bottom-30 {
   padding-bottom: 30px;
 }
 
-/* line 769, ../../app/styles/main.scss */
+/* line 776, ../../app/styles/main.scss */
 .padding-bottom-50 {
   padding-bottom: 50px;
 }
 
-/* line 773, ../../app/styles/main.scss */
+/* line 780, ../../app/styles/main.scss */
 .margin-bottom-5 {
   margin-bottom: 5px;
 }
 
-/* line 777, ../../app/styles/main.scss */
+/* line 784, ../../app/styles/main.scss */
 .margin-bottom-10 {
   margin-bottom: 10px;
 }
