@@ -25,7 +25,7 @@
         <div class="navbar navbar-default" role="navigation">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#/" ng-show="settings.logo"><img src="../images/logo.557efefb.png"></a>
-                <a class="navbar-brand" href="#/" ng-show="settings.back"><i class="fa fa-angle-left"></i>&nbsp; RETURN TO HOME</a>
+                <a class="navbar-brand" ng-href="{{settings.backLink}}" ng-show="settings.back"><i class="fa fa-angle-left"></i>&nbsp; {{settings.backText}}</a>
             </div>
             <div class="collapse navbar-collapse" id="js-navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -79,7 +79,7 @@
     ga('send', 'pageview');
     </script>
     <script src="scripts/vendor.b80c85db.js"></script>
-    <script src="scripts/scripts.7c6f9dc9.js"></script>
+    <script src="scripts/scripts.486e1792.js"></script>
 </body>
 
 </html>

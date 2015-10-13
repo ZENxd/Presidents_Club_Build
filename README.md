@@ -12,6 +12,11 @@ JS services and controllers reside in the /scripts folder
 
 Edit file: scripts.********.js only.
 
+## Nomination Screens
+Nominator screens are accesable via
+
+http://host.com:port/#/list
+
 ## JS functions:
 .controller->MainCtrl for login service calls.
 

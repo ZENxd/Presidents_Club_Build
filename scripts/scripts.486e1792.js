@@ -260,7 +260,8 @@ angular.module('presidentsClubApp')
             //Top nav DOM visual switches
             settings.setValue('logo', false);
             settings.setValue('back', true);
-
+            settings.setValue('backText', 'RETURN TO HOME');
+            settings.setValue('backLink', '#/');
             //Step forward to next form after validation
             $scope.next = function(url) {
                 if ($scope.userForm.$valid) {
@@ -438,6 +439,8 @@ angular.module('presidentsClubApp')
 
             settings.setValue('logo', true);
             settings.setValue('back', false);
+            settings.setValue('backText', '2015 Nominees');
+            settings.setValue('backLink', '#/list');
             $scope.nomineesModel = null;
 
             demoService.getNominees(function(result) {
@@ -682,7 +685,9 @@ angular.module('presidentsClubApp')
             var settings = {
                 'logo': true,
                 'back': false,
-                'user': false
+                'user': false,
+                'backText': 'RETURN TO HOME',
+                'backLink': '#/'
             };
 
             this.getSettings = function(callback) {
