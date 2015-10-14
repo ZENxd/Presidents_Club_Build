@@ -433,15 +433,26 @@ angular.module('presidentsClubApp')
  * Controller of the presidentsClubApp
  */
 angular.module('presidentsClubApp')
-    .controller('ListCtrl', ['$scope', '$rootScope', '$location', 'demoService', 'settings', 
-        function($scope, $rootScope, $location, demoService, settings) {
+    .controller('ListCtrl', ['$scope', '$rootScope', '$location', 'demoService', 'settings', '$anchorScroll',
+        function($scope, $rootScope, $location, demoService, settings, $anchorScroll) {
 
+            //Bounce to here if we have a user not logged in
+            if (!$rootScope.globals.currentUser) {
+                $location.path('/');
+            } else {
+                $rootScope.cloud = true;
+            }
 
             settings.setValue('logo', true);
             settings.setValue('back', false);
             settings.setValue('backText', '2015 Nominees');
             settings.setValue('backLink', '#/list');
             $scope.nomineesModel = null;
+
+            $scope.scrollTo = function(id) {
+                $location.hash(id);
+                $anchorScroll();
+            };
 
             demoService.getNominees(function(result) {
                 $scope.nomineesModel = result;
@@ -464,8 +475,15 @@ angular.module('presidentsClubApp')
  * Controller of the presidentsClubApp
  */
 angular.module('presidentsClubApp')
-    .controller('DetailCtrl', ['$scope', '$rootScope', '$location', '$routeParams', 'nomineeService', 'demoService', 'settings',
-        function($scope, $rootScope, $location, $routeParams, nomineeService, demoService, settings) {
+    .controller('DetailCtrl', ['$scope', '$rootScope', '$location', '$routeParams', 'nomineeService', 'demoService', 'settings', '$anchorScroll', 
+        function($scope, $rootScope, $location, $routeParams, nomineeService, demoService, settings, $anchorScroll) {
+
+            //Bounce to here if we have a user not logged in
+            if (!$rootScope.globals.currentUser) {
+                $location.path('/');
+            } else {
+                $rootScope.cloud = true;
+            }
 
             settings.setValue('logo', false);
             settings.setValue('back', true);
@@ -473,6 +491,10 @@ angular.module('presidentsClubApp')
             $scope.nomineeModel = null;
             $scope.nomineeModelId = $routeParams.id;
 
+            $scope.scrollTo = function(id) {
+                $location.hash(id);
+                $anchorScroll();
+            };
 
             demoService.queryNominee(function(result) {
                     $scope.nomineeModel = result;
@@ -483,8 +505,9 @@ angular.module('presidentsClubApp')
 
             $scope.approve = function(id) {
                 //Demo
-                demoService.save(id, 'Approved');
-                $scope.back();
+                var value = ($scope.nomineeModel.nomStatus === 'Approved') ? 'Awaiting Approval' : 'Approved';
+                demoService.save(id, value);
+                //$scope.back();
                 //
 
                 //API call
@@ -495,10 +518,11 @@ angular.module('presidentsClubApp')
 
             $scope.deny = function(id) {
                 //Demo
-                demoService.save(id, 'Denied');
-                $scope.back();
+                var value = ($scope.nomineeModel.nomStatus === 'Denied') ? 'Awaiting Approval' : 'Denied';
+                demoService.save(id, value);
+                //$scope.back();
                 //
-                
+
                 //API call
                 //$scope.save(id, 'Denied');
             };
@@ -1585,7 +1609,7 @@ angular.module('presidentsClubApp')
 
       var details = {
         so: {id: '0', name: 'LSAG/ACG'},
-        region: {id: '0', name: 'China'}, 
+        region: {id: '0', name: 'Americas'}, 
         country: {id: '0', name: 'USA'},
         address: '5301 Stevens Creek Blvd., Santa Clara CA, 95051',
         officeTel: '8774244536', mobileTel: '4083458886',

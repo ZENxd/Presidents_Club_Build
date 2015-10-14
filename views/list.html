@@ -1,17 +1,20 @@
-<div class="container heading">
+<div class="container heading" id="head">
         <h1>THE PRESIDENT'S CLUB</h1>
         <h2>2015 NOMINEES</h2>
 </div>
-<div class="panel panel-default">
+<div class="panel panel-default" style="margin-bottom: 50px;">
     <div class="panel-heading" style="background-color:#F5F3E3;color:#d3a907;font-size:0.8em;">
         <div class="row">
             <div class="col col-md-4">
                 NOMINEE
             </div>
-            <div class="col col-md-3">
+            <div class="col col-md-2">
                 NOMINATOR
             </div>
-            <div class="col col-md-3">
+            <div class="col col-md-2">
+                REGION
+            </div>
+            <div class="col col-md-2">
                 STATUS
             </div>
             <div class="col col-md-2">
@@ -19,23 +22,30 @@
             </div>
         </div>
     </div>
-    <div class="panel-body">
-        <div class="row padding-top-30 padding-bottom-30" ng-class="{'underline' : !$last}" ng-repeat="nominee in nomineesModel">
+    <div class="panel-body tight">
+        <div class="row" ng-class="{'underline' : !$last}" ng-repeat="nominee in nomineesModel">
             <div class="col col-md-4">
-                <span class="listName"><a ng-click="edit(nominee.id)">{{nominee.first}} {{nominee.last}}</a></span><br/>
-                <span class="listTitle">{{nominee.title.name}}</span>
+                <p><span class="listName"><a ng-click="edit(nominee.id)">{{nominee.first}} {{nominee.last}}</a></span><br/>
+                <span class="listTitle">{{nominee.title.name}}</span></p>
             </div>
-            <div class="col col-md-3">
-                {{nominee.nominator.first}} {{nominee.nominator.last}}
+            <div class="col col-md-2">
+                <p class="smaller">{{nominee.nominator.first}} {{nominee.nominator.last}}</p>
             </div>
-            <div class="col col-md-3" ng-style="myColor={color:(nominee.nomStatus === 'Denied') ? '#CA4045' : 
-                                                        (nominee.nomStatus === 'Approved') ? '#00B601' : '#ccc'}">
-                <i ng-show="nominee.nomStatus" ng-class="{'fa fa-check' : nominee.nomStatus === 'Approved', 'fa fa-close' : nominee.nomStatus === 'Denied'}"></i> {{nominee.nomStatus ? nominee.nomStatus : 'Awaiting Approval'}}
+            <div class="col col-md-2">
+                <p class="smaller">{{nominee.region.name}}</p>
+            </div>
+            <div class="col col-md-2 gray-col" ng-style="myColor={color:(nominee.nomStatus === 'Denied') ? '#CA4045' : 
+                                                        (nominee.nomStatus === 'Approved') ? '#d3a907' : '#ccc'}">
+                <p class="smaller"><i ng-show="nominee.nomStatus" ng-class="{'fa fa-check' : nominee.nomStatus === 'Approved', 'fa fa-close' : nominee.nomStatus === 'Denied'}"></i> 
+                {{nominee.nomStatus ? nominee.nomStatus : 'Awaiting Approval'}}</p>
               
             </div>
             <div class="col col-md-2" style="text-align:center;">
-                <button type="button" class="btn btn-review" ng-click="detail(nominee.id)">REVIEW</button>
+                <p><button type="button" class="btn btn-review" ng-click="detail(nominee.id)">REVIEW</button></p>
             </div>
         </div>
     </div>
+</div>
+<div class="container" style="text-align:center;">
+    <a ng-click="scrollTo('head')"><i class="fa fa-chevron-up fa-2x"></i><br/> Back To Top</a>
 </div>
