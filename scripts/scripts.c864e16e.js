@@ -175,6 +175,7 @@ angular.module('presidentsClubApp')
                     if (response.success) {
                         AuthenticationService.SetCredentials($scope.loginCredentials);
                         $scope.loginError = false;
+                        console.log($scope.loginCredentials.authLevel);
                         $scope.next();
                     } else {
                         $scope.loginError = true;
@@ -187,7 +188,11 @@ angular.module('presidentsClubApp')
             // Continue to step 1 after successfull login
             $scope.next = function() {
                 globals.loader.show = false;
-                $location.path('/home');
+                var path = '/home';
+                if($scope.loginCredentials.authLevel > 0) {
+                    path = '/list';
+                }
+                $location.path(path);
             };
 
         }
@@ -483,11 +488,14 @@ angular.module('presidentsClubApp')
                 $location.path('/');
             } else {
                 $rootScope.cloud = true;
+                $scope.authLevel = $rootScope.globals.currentUser.authLevel;
             }
 
             settings.setValue('logo', false);
             settings.setValue('back', true);
-
+            settings.setValue('backText', '2015 Nominees');
+            settings.setValue('backLink', '#/list');
+            
             $scope.nomineeModel = null;
             $scope.nomineeModelId = $routeParams.id;
 
@@ -503,37 +511,44 @@ angular.module('presidentsClubApp')
                 $scope.nomineeModelId
             );
 
-            $scope.approve = function(id) {
+            $scope.approve = function() {
                 //Demo
                 var value = ($scope.nomineeModel.nomStatus === 'Approved') ? 'Awaiting Approval' : 'Approved';
-                demoService.save(id, value);
-                //$scope.back();
+                $scope.nomineeModel.nomStatus = value;
+                demoService.save($scope.nomineeModelId, $scope.nomineeModel);
                 //
 
                 //API call
-                //$scope.save(id, 'Approved');
-
-                
+                //$scope.save($scope.nomineeModelId, 'Approved');
             };
 
-            $scope.deny = function(id) {
+            $scope.deny = function() {
                 //Demo
                 var value = ($scope.nomineeModel.nomStatus === 'Denied') ? 'Awaiting Approval' : 'Denied';
-                demoService.save(id, value);
-                //$scope.back();
+                $scope.nomineeModel.nomStatus = value;
+                demoService.save($scope.nomineeModelId, $scope.nomineeModel);
                 //
 
                 //API call
-                //$scope.save(id, 'Denied');
+                //$scope.save($scope.nomineeModelId, 'Denied');
+            };
+
+            $scope.winner = function() {
+                //Demo
+                var value = ($scope.nomineeModel.winner) ? false : true;
+                $scope.nomineeModel.winner = value;
+                demoService.save($scope.nomineeModelId, $scope.nomineeModel);
+                //
+
+                //API call
+                //$scope.save($scope.nomineeModelId, 'Denied');
             };
 
             //API only
-            $scope.save = function(id, value) {
+            $scope.save = function() {
                 //Update model to server
-                var vote = {'id':id, 'value':value};
-                nomineeService.updateNominee(vote).then(function(result) {
+                nomineeService.updateNominee($scope.nomineeModel).then(function(result) {
                     console.log(result);
-                    $scope.back();
                 });
             };
 
@@ -576,16 +591,36 @@ angular.module('presidentsClubApp')
                 /* Dummy authentication for testing, uses $timeout to simulate api call
                  ----------------------------------------------*/
                 $timeout(function() {
+                    //Basic credentials
                     loginCredentials.first = 'John';
                     loginCredentials.last = 'Smith';
                     loginCredentials.email = 'jsmith@agilent.com';
+
+                    //Basic flag to determine auth level
+                    loginCredentials.authLevel = 0;
+
+                    //Default user
+                    // loginCredentials.username = 'John_Smith';
+
+                        //Regional
+                    if(loginCredentials.username === 'Regional_Manager'){
+                        loginCredentials.authLevel = 1;
+                        //loginCredentials.username = 'Regional_Manager';
+                        //World wide
+                    } else if(loginCredentials.username === 'Worldwide_Manager'){
+                        loginCredentials.authLevel = 2;
+                        //loginCredentials.username = 'Worldwide_Manager';
+                    }
+
                     var response = {
-                        success: loginCredentials.username === 'John_Smith' && 
+                        success:    loginCredentials.username && 
                                     loginCredentials.password === 'password' && 
                                     loginCredentials.first === 'John' && 
                                     loginCredentials.last === 'Smith' && 
                                     loginCredentials.email === 'jsmith@agilent.com'
                     };
+                    
+                        
                     if (!response.success) {
                         response.message = 'Username or password is incorrect';
                     }
@@ -611,6 +646,7 @@ angular.module('presidentsClubApp')
                         userFirst: loginCredentials.first,
                         userLast: loginCredentials.last,
                         userEmail: loginCredentials.email,
+                        authLevel: loginCredentials.authLevel,
                         authdata: authdata
                     }
                 };
@@ -760,13 +796,13 @@ angular.module('presidentsClubApp')
         .factory('nomineeService', function($http, $log, $q) {
             return {
                 /* 
-                    Server REST API Calls
+                    Server REST API (CRUD) operations.
                     Change URL's to path to your REST call.
                 */
                 //Post a nominee
                 postNominee: function(dataObj) {
                     var q = $q.defer();
-                    $http.post('/api/v1/nominees', dataObj)
+                    $http.post('/api/v1/save', dataObj)
                         .success(function(result) {
                             q.resolve(result);
                         }).error(function(msg, code) {
@@ -778,7 +814,7 @@ angular.module('presidentsClubApp')
                 //Update nominee (Approve, Deny)
                 updateNominee: function(dataObj) {
                     var q = $q.defer();
-                    $http.post('/api/v1/nominees', dataObj)
+                    $http.post('/api/v1/update', dataObj)
                         .success(function(result) {
                             q.resolve(result);
                         }).error(function(msg, code) {
@@ -790,7 +826,7 @@ angular.module('presidentsClubApp')
                 //Get all nominees
                 getNominees: function() {
                     var q = $q.defer();
-                    $http.get('/api/v1/nominees')
+                    $http.get('/api/v1/query')
                         .success(function(result) {
                             q.resolve(result);
                         }).error(function(msg, code) {
@@ -802,7 +838,7 @@ angular.module('presidentsClubApp')
                 //Get a nominee by id
                 getNomineeById: function(id) {
                     var q = $q.defer();
-                    $http.get('/api/v1/nominees' + id)
+                    $http.get('/api/v1/query' + id)
                         .success(function(result) {
                             q.resolve(result);
                         }).error(function(msg, code) {
@@ -855,7 +891,8 @@ angular.module('presidentsClubApp')
                     email: '',
                     phone: ''
                 },*/
-                nominationStatus: ''
+                nominationStatus: '',
+                winner: false
             };
             nomineeModel = angular.copy(template);
 
@@ -1549,7 +1586,7 @@ angular.module('presidentsClubApp')
 (function() {
   'use strict';
   angular.module('presidentsClubApp')
-    .service('demoService', function() {
+    .service('demoService', ['$rootScope', function($rootScope) {
       
       var data = [];
       var template = {
@@ -1589,7 +1626,8 @@ angular.module('presidentsClubApp')
               email: '',
               phone: ''
           },*/
-          nominationStatus: ''
+          nominationStatus: '',
+          winner: false
       };
 
       var nominees = [
@@ -1633,6 +1671,7 @@ angular.module('presidentsClubApp')
 
       this.makeNominees = function(){
         angular.forEach(nominees, function(nominee, index){
+          var chosenValue = Math.random() < 0.5 ? 'Approved' : 'Denied';
           var employee = angular.copy(template);
           employee.id = index;
           employee.number = nominees[index].number;
@@ -1660,10 +1699,11 @@ angular.module('presidentsClubApp')
           employee.comments.relationship = comment;
           employee.comments.behavior = comment;
           employee.comments.leadership = comment;
-          employee.nomStatus = 'Awaiting Approval';
+          employee.nomStatus = ($rootScope.globals.currentUser.authLevel === 2) ? chosenValue : 'Awaiting Approval';
           employee.nominator = {first: nominators[index].first, last: nominators[index].last, 
                                 email: nominators[index].first+'@agilent.com',
                                 phone: nominators[index].phone};
+          employee.winner = false;
           data.push(employee);
         });
       };
@@ -1677,8 +1717,10 @@ angular.module('presidentsClubApp')
         callback(data[id]);
       };
 
-      this.save = function(id, value){
-        data[id].nomStatus = value;
+      this.save = function(id, nominee){
+        data[id] = nominee;
       };
-    });
+
+
+    }]);
 })();

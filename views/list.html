@@ -34,11 +34,16 @@
             <div class="col col-md-2">
                 <p class="smaller">{{nominee.region.name}}</p>
             </div>
-            <div class="col col-md-2 gray-col" ng-style="myColor={color:(nominee.nomStatus === 'Denied') ? '#CA4045' : 
+            <!-- Regional -->
+            <div ng-if="!nominee.winner" class="col col-md-2 gray-col" ng-style="myColor={color:(nominee.nomStatus === 'Denied') ? '#CA4045' : 
                                                         (nominee.nomStatus === 'Approved') ? '#d3a907' : '#ccc'}">
                 <p class="smaller"><i ng-show="nominee.nomStatus" ng-class="{'fa fa-check' : nominee.nomStatus === 'Approved', 'fa fa-close' : nominee.nomStatus === 'Denied'}"></i> 
                 {{nominee.nomStatus ? nominee.nomStatus : 'Awaiting Approval'}}</p>
               
+            </div>
+            <!-- Worldwide -->
+            <div ng-if="nominee.winner" class="col col-md-2 green-col">
+                <p class="winner-text smaller"><i class="fa fa-trophy"></i> WINNER</p>
             </div>
             <div class="col col-md-2" style="text-align:center;">
                 <p><button type="button" class="btn btn-review" ng-click="detail(nominee.id)">REVIEW</button></p>

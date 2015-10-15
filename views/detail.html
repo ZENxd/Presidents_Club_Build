@@ -7,12 +7,19 @@
                 <span class="step">&nbsp;</span><br/>
                 <span class="step-name">THE NOMINEE</span>
             </div>
-            <div class="pull-right right">
-                <button type="button" class="btn btn-approve" ng-click="approve(nomineeModel.id)"><i class="fa fa-check pull-left"></i> 
+            <!-- Regional -->
+            <div class="pull-right right" ng-if="authLevel === 1">
+                <button type="button" class="btn btn-approve" ng-click="approve()"><i class="fa fa-check pull-left"></i> 
                   <span>{{(nomineeModel.nomStatus === 'Approved') ? 'UNDO APPROVED' : 'APPROVE'}}</span>
                 </button>
-                <button type="button" class="btn btn-deny" ng-click="deny(nomineeModel.id)"><i class="fa fa-close pull-left"></i> 
+                <button type="button" class="btn btn-deny" ng-click="deny()"><i class="fa fa-close pull-left"></i> 
                 <span>{{(nomineeModel.nomStatus === 'Denied') ? 'UNDO DENY' : 'DENY'}}</span>
+                </button>
+            </div>
+            <!-- Worldwide -->
+            <div class="pull-right right" ng-if="authLevel === 2">
+                <button type="button" ng-class="{'btn btn-winner' : nomineeModel.nomStatus === 'Approved',  'btn btn-approve' : nomineeModel.nomStatus === 'Denied'}" ng-click="winner()"><i class="fa fa-trophy pull-left"></i> 
+                <span>{{(nomineeModel.winner) ? 'UNDO MAKE WINNER' : 'MAKE WINNER'}}</span>
                 </button>
             </div>
         </div>
@@ -27,9 +34,28 @@
           <div class="col-md-3 detail">
             {{nomineeModel.salutation.name}}
           </div>
-          <div class="col-md-8" style="text-align:right">
+          <!-- Regional -->
+          <div class="col-md-8" style="text-align:right" ng-if="authLevel === 1">
             <span ng-show="nomineeModel.nomStatus === 'Approved'" class="approved-text larger"><i class="fa fa-check"></i> Approved by Regional Manager</span>
             <span ng-show="nomineeModel.nomStatus === 'Denied'" class="denied-text larger"><i class="fa fa-close"></i> Denied by Regional Manager</span>
+          </div>
+          <!-- Worldwide -->
+          <div class="col-md-8" style="text-align:right" ng-if="authLevel === 2">
+
+          <span ng-switch on="nomineeModel.winner">
+            <span ng-switch-when="false">
+              <span ng-switch on="nomineeModel.nomStatus">
+                <span class="approved-text larger" ng-switch-when="Approved"><i class="fa fa-check"></i> Approved by Regional Manager</span>
+                <span class="denied-text larger" ng-switch-when="Denied"><i class="fa fa-close"></i> Denied by Regional Manager</span>
+              </span>
+            </span>
+            <span ng-switch-when="true">
+              <span class="winner-text larger"><i class="fa fa-trophy"></i> Made Winner by Worldwide Manager</span>
+            </span>
+          </span>
+              
+            
+            
           </div>
         </div>
 
