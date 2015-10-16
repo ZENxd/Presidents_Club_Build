@@ -304,7 +304,7 @@ angular.module('presidentsClubApp')
             //Consumable Data for pre-population, dropdowns etc.
             dataService.getData(function(result) {
                 $scope.salesOrg = result.salesOrg;
-                $scope.regions = result.countries;
+                $scope.regions = result.regions;
                 $scope.countries = result.countries;
                 $scope.titles = result.titles;
                 $scope.salutations = result.salutations;
@@ -867,7 +867,6 @@ angular.module('presidentsClubApp')
                 mobileTel: '',
                 email: '',
                 title: {},
-                nominatedByManager: 'No',
                 recurringWinner: 'No',
                 winCount: {},
                 years: '',
@@ -884,13 +883,6 @@ angular.module('presidentsClubApp')
                     behavior: '',
                     leadership: ''
                 },
-                /*
-                nominator: {
-                    first: '',
-                    last: '',
-                    email: '',
-                    phone: ''
-                },*/
                 nominationStatus: '',
                 winner: false
             };
@@ -918,20 +910,27 @@ angular.module('presidentsClubApp')
 
             var data = {
                 salesOrg: [{
-                    id: '0',
+                    id: 0,
                     name: 'LSAG/ACG'
                 }, {
-                    id: '1',
-                    name: 'SAG2/ABC'
-                }, {
-                    id: '2',
-                    name: 'SAG3/DEF'
-                }, {
-                    id: '3',
-                    name: 'SAA4/EYT'
-                }, {
-                    id: '4',
-                    name: 'SAG5/ANB'
+                    id: 1,
+                    name: 'DGG'
+                }],
+                regions: [{
+                    id: 0,
+                    name: 'AFO'
+                },{
+                    id: 1,
+                    name: 'China'
+                },{
+                    id: 2,
+                    name: 'EMEAI'
+                },{
+                    id: 3,
+                    name: 'Japan'
+                },{
+                    id: 4,
+                    name: 'SAPK'
                 }],
                 countries: [{
                     id: 0,
@@ -1523,54 +1522,54 @@ angular.module('presidentsClubApp')
                     name: 'Zimbabweid'
                 }],
                 titles: [{
-                    id: '0',
-                    name: 'Accountant'
-                }, {
-                    id: '1',
+                    id: 0,
                     name: 'Account Manager'
                 }, {
-                    id: '2',
-                    name: 'District Sales Managr'
-                }, {
-                    id: '3',
-                    name: 'Product Designer'
-                }, {
-                    id: '4',
+                    id: 1,
                     name: 'Product Specialist'
+                }, {
+                    id: 2,
+                    name: 'Application Engineer'
+                }, {
+                    id: 3,
+                    name: 'District Sales Manager'
+                }, {
+                    id: 4,
+                    name: 'Sales Development Manager'
                 }],
                 salutations: [{
-                    id: '0',
+                    id: 0,
                     name: 'Mr.'
                 }, {
-                    id: '1',
+                    id: 1,
                     name: 'Ms.'
                 }, {
-                    id: '2',
+                    id: 2,
                     name: 'Mrs.'
                 }, {
-                    id: '3',
+                    id: 3,
                     name: 'Miss'
                 }, {
-                    id: '4',
+                    id: 4,
                     name: 'Dr.'
                 }, {
-                    id: '5',
+                    id: 5,
                     name: 'Prof.'
                 }],
                 winCount: [{
-                    id: '0',
+                    id: 0,
                     name: '1'
                 }, {
-                    id: '1',
+                    id: 1,
                     name: '2'
                 }, {
-                    id: '2',
+                    id: 2,
                     name: '3'
                 }, {
-                    id: '3',
+                    id: 3,
                     name: '4'
                 }, {
-                    id: '4',
+                    id: 4,
                     name: '5'
                 }]
             };
@@ -1602,7 +1601,6 @@ angular.module('presidentsClubApp')
           mobileTel: '',
           email: '',
           title: {},
-          nominatedByManager: 'No',
           recurringWinner: 'No',
           winCount: {},
           years: '',
@@ -1619,13 +1617,6 @@ angular.module('presidentsClubApp')
               behavior: '',
               leadership: ''
           },
-          /*
-          nominator: {
-              first: '',
-              last: '',
-              email: '',
-              phone: ''
-          },*/
           nominationStatus: '',
           winner: false
       };
@@ -1653,7 +1644,6 @@ angular.module('presidentsClubApp')
         officeTel: '8774244536', mobileTel: '4083458886',
         recurringWinner: 'Yes',
         performance: {salesQuota: 1500000, sales: 1700000, percentOver: 110, percentLast: 103},
-        nominatedByManager: 'Yes',
         winCount: {id: '1', name: '2'},
         years: '2010, 2011'
       };
@@ -1687,7 +1677,6 @@ angular.module('presidentsClubApp')
           employee.officeTel = details.officeTel;
           employee.mobileTel = details.mobileTel;
           employee.recurringWinner = details.recurringWinner;
-          employee.nominatedByManager = details.nominatedByManager;
           employee.winCount = details.winCount;
           employee.years = details.years;
           employee.performance.salesQuota = details.performance.salesQuota;

@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col col-md-3"></div>
             <div class="col col-md-6" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
-                <input type="text" name="username" class="form-control required" placeholder="Agilent User ID (i.e. John_Smith)" ng-model="loginCredentials.username" required>
+                <input type="text" name="username" class="form-control tall required" placeholder="Agilent User ID (i.e. John_Smith)" ng-model="loginCredentials.username" required>
                 <p ng-show="userForm.username.$invalid && !userForm.username.$pristine" class="error">Username is required.</p>
             </div>
             <div class="col col-md-3"></div>
@@ -33,7 +33,7 @@
         <div class="row">
             <div class="col col-md-3"></div>
             <div class="col col-md-6" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
-                <input type="password" name="password" class="form-control required" placeholder="password" ng-model="loginCredentials.password" required>
+                <input type="password" name="password" class="form-control tall required" placeholder="password" ng-model="loginCredentials.password" required>
                 <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="error">Password is required.</p>
             </div>
             <div class="col col-md-3"></div>
