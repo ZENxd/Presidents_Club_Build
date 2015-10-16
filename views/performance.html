@@ -23,7 +23,7 @@
 
           <div class="row">
             <div class="col col-md-3 col-xs-4" ng-class="{ 'has-error' : userForm.salesQuota.$invalid && !userForm.salesQuota.$pristine }">
-              <span class="required">*</span> Fiscal Year Sales Quota in USD <br/>
+              <span class="asterisk">*</span> Fiscal Year Sales Quota in USD <br/>
 
               <div class="currency">
                 <div class="input-group">
@@ -41,7 +41,7 @@
 
           <div class="row">
             <div class="col col-md-3 col-xs-4" ng-class="{ 'has-error' : userForm.sales.$invalid && !userForm.sales.$pristine }">
-              <span class="required">*</span> Actual Fiscal Year Sales in USD <br/>
+              <span class="asterisk">*</span> Actual Fiscal Year Sales in USD <br/>
 
               <div class="currency">
                 <div class="input-group">
@@ -59,7 +59,7 @@
 
           <div class="row">
             <div class="col col-md-3 col-xs-4" ng-class="{ 'has-error' : userForm.percentOver.$invalid && !userForm.percentOver.$pristine }">
-              <span class="required">*</span> Percent of Sales Quota <br/>
+              <span class="asterisk">*</span> Percent of Sales Quota <br/>
 
               <div class="currency">
                 <div class="input-group">
@@ -78,7 +78,7 @@
 
           <div class="row" style="margin-bottom: -19px;">
             <div class="col col-md-4 col-xs-5">
-              <span class="required">*</span> Previous Year Percent of Sales Quota
+              <span class="asterisk">*</span> Previous Year Percent of Sales Quota
             </div>
           </div>
 
@@ -101,7 +101,7 @@
 
           <div class="row">
             <div class="col col-md-5 col-xs-11">
-              <span class="required">*</span> Is the nominee a previous Presidents Club winner?<br/>
+              <span class="asterisk">*</span> Is the nominee a previous Presidents Club winner?<br/>
               <label>
                 <input type="checkbox"
                  ng-model="nomineeModel.recurringWinner"
@@ -115,7 +115,7 @@
           <div ng-show="nomineeModel.recurringWinner === 'Yes'">
             <div class="row">
               <div class="col col-md-3 col-xs-4">
-                <span class="required">*</span> If yes, then how many times?
+                <span class="asterisk">*</span> If yes, then how many times?
                 <select class="form-control required" name="winCount"          
                         ng-model="nomineeModel.winCount" 
                         ng-options="item.name for item in winCount track by item.id"

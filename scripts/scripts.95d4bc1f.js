@@ -267,6 +267,7 @@ angular.module('presidentsClubApp')
             settings.setValue('back', true);
             settings.setValue('backText', 'RETURN TO HOME');
             settings.setValue('backLink', '#/');
+            
             //Step forward to next form after validation
             $scope.next = function(url) {
                 if ($scope.userForm.$valid) {
