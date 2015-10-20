@@ -454,6 +454,10 @@ angular.module('presidentsClubApp')
                 $location.path('/');
             } else {
                 $rootScope.cloud = true;
+                if($rootScope.globals.currentUser.authLevel === 0){
+                    //Kick out
+                    $location.path('/home');
+                }
                 if ($rootScope.globals.currentUser.region && $rootScope.globals.currentUser.region.hasOwnProperty('name')) {
                     $scope.region = $rootScope.globals.currentUser.region.name;
                 }

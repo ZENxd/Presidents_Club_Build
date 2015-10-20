@@ -18,7 +18,7 @@
             </div>
             <!-- Use For Worldwide -->
             <div class="pull-right right" ng-if="authLevel === 2">
-                <button type="button" ng-class="{'btn btn-winner' : nomineeModel.nomStatus === 'Approved',  'btn btn-approve' : nomineeModel.nomStatus === 'Denied'}" ng-click="winner()"><i class="fa fa-trophy pull-left"></i> 
+                <button type="button" ng-class="{'btn btn-winner' : nomineeModel.nomStatus === 'Approved',  'btn btn-approve' : nomineeModel.nomStatus === 'Denied' || nomineeModel.nomStatus === 'Awaiting Approval'}" ng-click="winner()"><i class="fa fa-trophy pull-left"></i> 
                 <span>{{(nomineeModel.winner) ? 'UNDO MAKE WINNER' : 'MAKE WINNER'}}</span>
                 </button>
             </div>
