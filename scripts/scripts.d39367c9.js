@@ -155,7 +155,8 @@ angular.module('presidentsClubApp')
                 password: null,
                 firstName: null,
                 lastName: null,
-                email: null
+                email: null,
+                region: null
             };
             $scope.loginError = false;
 
@@ -448,11 +449,19 @@ angular.module('presidentsClubApp')
     .controller('ListCtrl', ['$scope', '$rootScope', '$location', 'nomineeService', 'demoService', 'settings', '$anchorScroll',
         function($scope, $rootScope, $location, nomineeService, demoService, settings, $anchorScroll) {
 
+            $scope.regionError = false;
+
             //Bounce to here if we have a user not logged in
             if (!$rootScope.globals.currentUser) {
                 $location.path('/');
             } else {
                 $rootScope.cloud = true;
+                if ($rootScope.globals.currentUser.region.hasOwnProperty('name')) {
+                    $scope.region = $rootScope.globals.currentUser.region.name;
+                    $scope.regionError = false;
+                } else {
+                    $scope.regionError = true;
+                }
             }
 
             settings.setValue('logo', true);
@@ -460,6 +469,7 @@ angular.module('presidentsClubApp')
             settings.setValue('backText', '2015 Nominees');
             settings.setValue('backLink', '#/list');
             $scope.nomineesModel = null;
+
 
             $scope.scrollTo = function(id) {
                 $location.hash(id);
@@ -477,7 +487,7 @@ angular.module('presidentsClubApp')
                 $scope.nomineesModel = result;
             });
             */
-            
+
             $scope.detail = function(id) {
                 $location.path('/detail/' + id);
             };
@@ -669,6 +679,7 @@ angular.module('presidentsClubApp')
                         userFirst: loginCredentials.first,
                         userLast: loginCredentials.last,
                         userEmail: loginCredentials.email,
+                        region: loginCredentials.region,
                         authLevel: loginCredentials.authLevel,
                         authdata: authdata
                     }
@@ -1689,6 +1700,23 @@ angular.module('presidentsClubApp')
       this.makeNominees = function(){
         angular.forEach(nominees, function(nominee, index){
           var chosenValue = Math.random() < 0.5 ? 'Approved' : 'Denied';
+          var regions = [{
+                    id: 0,
+                    name: 'AFO'
+                },{
+                    id: 1,
+                    name: 'China'
+                },{
+                    id: 2,
+                    name: 'EMEAI'
+                },{
+                    id: 3,
+                    name: 'Japan'
+                },{
+                    id: 4,
+                    name: 'SAPK'
+                }];
+          var region = regions[Math.floor(Math.random() * regions.length)];
           var employee = angular.copy(template);
           employee.id = index;
           employee.number = nominees[index].number;
@@ -1698,7 +1726,7 @@ angular.module('presidentsClubApp')
           employee.title = nominees[index].title;
           employee.email = nominees[index].first+'@agilent.com';
           employee.so = details.so;
-          employee.region = details.region;
+          employee.region = region; //details.region;
           employee.country = details.country;
           employee.address = details.address;
           employee.officeTel = details.officeTel;
