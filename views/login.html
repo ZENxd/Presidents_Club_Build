@@ -31,10 +31,10 @@
             <div class="col col-md-3"></div>
         </div>
         <!-- Used only for regional manager login -->
-        <div class="row">
+        <div class="row" ng-show="loginCredentials.username === 'Regional_Manager'">
             <div class="col col-md-3"></div>
             <div class="col col-md-6" ng-class="{ 'has-error' : userForm.region.$invalid && !userForm.region.$pristine }">
-                <select class="form-control tall required" name="region" ng-model="loginCredentials.region" ng-options="item.name for item in regions track by item.id" required>
+                <select class="form-control tall required" name="region" ng-model="loginCredentials.region" ng-options="item.name for item in regions track by item.id" ng-required="loginCredentials.username === 'Regional_Manager'">
                     <option value="">Select your region...</option>
                 </select>
                 <p ng-show="userForm.region.$invalid && !userForm.region.$pristine" class="error">Region is required.</p>
