@@ -141,8 +141,8 @@ angular.module('presidentsClubApp')
  * Controller of the presidentsClubApp
  */
 angular.module('presidentsClubApp')
-    .controller('MainCtrl', ['$scope', '$rootScope', '$location', 'AuthenticationService', 'settings', 'globals',
-        function($scope, $rootScope, $location, AuthenticationService, settings, globals) {
+    .controller('MainCtrl', ['$scope', '$rootScope', '$location', 'AuthenticationService', 'settings', 'globals', 'dataService', 
+        function($scope, $rootScope, $location, AuthenticationService, settings, globals, dataService) {
 
             //Bounce to here if we have a user logged in
             if ($rootScope.globals.currentUser) {
@@ -158,6 +158,12 @@ angular.module('presidentsClubApp')
                 email: null
             };
             $scope.loginError = false;
+
+            // Only needed when Regional Managers login time
+            // Consumable Data for pre-population regions dropdown.
+            dataService.getRegions(function(result) {
+                $scope.regions = result;
+            });
 
             $scope.alert = {
                 type: 'danger',
@@ -439,8 +445,8 @@ angular.module('presidentsClubApp')
  * Controller of the presidentsClubApp
  */
 angular.module('presidentsClubApp')
-    .controller('ListCtrl', ['$scope', '$rootScope', '$location', 'demoService', 'settings', '$anchorScroll',
-        function($scope, $rootScope, $location, demoService, settings, $anchorScroll) {
+    .controller('ListCtrl', ['$scope', '$rootScope', '$location', 'nomineeService', 'demoService', 'settings', '$anchorScroll',
+        function($scope, $rootScope, $location, nomineeService, demoService, settings, $anchorScroll) {
 
             //Bounce to here if we have a user not logged in
             if (!$rootScope.globals.currentUser) {
@@ -460,10 +466,18 @@ angular.module('presidentsClubApp')
                 $anchorScroll();
             };
 
+            // Use for Demo only
             demoService.getNominees(function(result) {
                 $scope.nomineesModel = result;
             });
 
+            // Use for API only
+            /*
+            nomineeService.getNominees().then(function(result) {
+                $scope.nomineesModel = result;
+            });
+            */
+            
             $scope.detail = function(id) {
                 $location.path('/detail/' + id);
             };
@@ -505,6 +519,7 @@ angular.module('presidentsClubApp')
                 $anchorScroll();
             };
 
+            // Use for Demo only
             demoService.queryNominee(function(result) {
                     $scope.nomineeModel = result;
                 },
@@ -512,40 +527,47 @@ angular.module('presidentsClubApp')
                 $scope.nomineeModelId
             );
 
+            // Use for API only
+            /*
+            nomineeService.getNomineeById($scope.nomineeModelId).then(function(result) {
+                $scope.nomineeModel = result;
+            });
+            */
+
             $scope.approve = function() {
-                //Demo
                 var value = ($scope.nomineeModel.nomStatus === 'Approved') ? 'Awaiting Approval' : 'Approved';
                 $scope.nomineeModel.nomStatus = value;
-                demoService.save($scope.nomineeModelId, $scope.nomineeModel);
-                //
 
-                //API call
+                // Demo Save
+                demoService.save($scope.nomineeModelId, $scope.nomineeModel);
+
+                // API Save
                 //$scope.save($scope.nomineeModelId, 'Approved');
             };
 
             $scope.deny = function() {
-                //Demo
                 var value = ($scope.nomineeModel.nomStatus === 'Denied') ? 'Awaiting Approval' : 'Denied';
                 $scope.nomineeModel.nomStatus = value;
-                demoService.save($scope.nomineeModelId, $scope.nomineeModel);
-                //
 
-                //API call
+                // Demo Save
+                demoService.save($scope.nomineeModelId, $scope.nomineeModel);
+
+                // API Save
                 //$scope.save($scope.nomineeModelId, 'Denied');
             };
 
             $scope.winner = function() {
-                //Demo
                 var value = ($scope.nomineeModel.winner) ? false : true;
                 $scope.nomineeModel.winner = value;
-                demoService.save($scope.nomineeModelId, $scope.nomineeModel);
-                //
 
-                //API call
+                // Demo Winner
+                demoService.save($scope.nomineeModelId, $scope.nomineeModel);
+
+                // API Winner
                 //$scope.save($scope.nomineeModelId, 'Denied');
             };
 
-            //API only
+            // API only
             $scope.save = function() {
                 //Update model to server
                 nomineeService.updateNominee($scope.nomineeModel).then(function(result) {
@@ -1580,6 +1602,10 @@ angular.module('presidentsClubApp')
                 callback(data);
             };
 
+            // Login regions
+            this.getRegions = function(callback) {
+                callback(data.regions);
+            };
         });
 })();
 
