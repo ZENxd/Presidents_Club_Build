@@ -258,6 +258,8 @@ angular.module('presidentsClubApp')
                 $rootScope.cloud = true;
             }
 
+            $scope.submitError = false;
+
             //The persistant data model bound to html
             modelService.getModel(function(result) {
                 $scope.nomineeModel = result;
@@ -286,6 +288,7 @@ angular.module('presidentsClubApp')
 
             //Step back to previous form
             $scope.back = function(url) {
+                $scope.submitError = false;
                 //Update local model for persistance
                 modelService.updateModel($scope.nomineeModel);
                 $location.path('/' + url);
@@ -297,12 +300,15 @@ angular.module('presidentsClubApp')
 
             */
             $scope.save = function(url) {
+                $scope.submitError = false;
                 if ($scope.userForm.$valid) {
                     //Update local model for persistance
                     modelService.updateModel($scope.nomineeModel);
                     //Post model to server
                     nomineeService.postNominee($scope.nomineeModel).then(function(result) {
-                        console.log(result);
+                        if(result.error){
+                            $scope.submitError = true;
+                        }
                         //Goto thank you page.
                         $location.path('/' + url);
                     });
@@ -523,6 +529,9 @@ angular.module('presidentsClubApp')
             $scope.nomineeModel = null;
             $scope.nomineeModelId = $routeParams.id;
 
+            $scope.actionError = false;
+            $scope.alert = {msg:''};
+
             $scope.scrollTo = function(id) {
                 $location.hash(id);
                 $anchorScroll();
@@ -540,6 +549,10 @@ angular.module('presidentsClubApp')
             /*
             nomineeService.getNomineeById($scope.nomineeModelId).then(function(result) {
                 $scope.nomineeModel = result;
+                if(result.error){
+                    $scope.actionError = true;
+                    $scope.alert = {msg:'There was a problem getting nomination details. Please try reloading.'};
+                }
             });
             */
 
@@ -551,7 +564,7 @@ angular.module('presidentsClubApp')
                 demoService.save($scope.nomineeModelId, $scope.nomineeModel);
 
                 // API Save
-                //$scope.save($scope.nomineeModelId, 'Approved');
+                // $scope.save();
             };
 
             $scope.deny = function() {
@@ -562,7 +575,7 @@ angular.module('presidentsClubApp')
                 demoService.save($scope.nomineeModelId, $scope.nomineeModel);
 
                 // API Save
-                //$scope.save($scope.nomineeModelId, 'Denied');
+                // $scope.save();
             };
 
             $scope.winner = function() {
@@ -573,14 +586,20 @@ angular.module('presidentsClubApp')
                 demoService.save($scope.nomineeModelId, $scope.nomineeModel);
 
                 // API Winner
-                //$scope.save($scope.nomineeModelId, 'Denied');
+                // $scope.save();
             };
 
             // API only
             $scope.save = function() {
+                $scope.actionError = false;
                 //Update model to server
                 nomineeService.updateNominee($scope.nomineeModel).then(function(result) {
                     console.log(result);
+                },
+                function(error) {
+                    console.log(error);
+                    $scope.actionError = true;
+                    $scope.alert = {msg:'There was a problem saving to the server. Please try again.'};
                 });
             };
 

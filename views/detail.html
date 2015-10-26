@@ -38,6 +38,7 @@
           <div class="col-md-8" style="text-align:right" ng-if="authLevel === 1">
             <span ng-show="nomineeModel.nomStatus === 'Approved'" class="approved-text larger"><i class="fa fa-check"></i> Approved by Regional Manager</span>
             <span ng-show="nomineeModel.nomStatus === 'Denied'" class="denied-text larger"><i class="fa fa-close"></i> Denied by Regional Manager</span>
+            <div class="alert alert-danger" role="alert" style="text-align:center" ng-show="actionError">{{alert.msg}}</div>
           </div>
           <!-- Worldwide -->
           <div class="col-md-8" style="text-align:right" ng-if="authLevel === 2">

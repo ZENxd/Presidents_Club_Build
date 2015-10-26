@@ -82,6 +82,11 @@
           <hr/>
           <button type="button" class="btn btn-form" ng-click="back('performance')"><i class="fa fa-angle-left fa-lg padding-right-20"></i> BACK</button>
           <button type="submit" class="btn btn-form" ng-disabled="userForm.$invalid">SUBMIT NOMINATION</button>
+          <div class="row">
+            <div class="col col-md-11">
+              <div class="alert alert-danger" role="alert" ng-show="submitError">There was a problem saving your nomination. Please try again.</div>
+            </div>
+          </div>
         </form>
       </div>
     </div>
