@@ -102,7 +102,7 @@
                 <div class="row">
                     <div class="col col-md-3 col-xs-4">
                         <span class="asterisk">*</span> Nominee's Position/Title
-                        <select class="form-control required" ng-required="true" name="title" ng-model="nomineeModel.title" ng-options="item.name for item in titles track by item.id" required>
+                        <select class="form-control required" name="title" ng-model="nomineeModel.title" ng-options="item.name for item in titles track by item.id" required>
                             <option value="">Choose</option>
                         </select>
                         <p ng-show="userForm.title.$invalid && !userForm.title.$pristine" class="error">Title is required.</p>
