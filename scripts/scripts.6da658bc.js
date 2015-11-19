@@ -276,7 +276,7 @@ angular.module('presidentsClubApp')
             settings.setValue('back', true);
             settings.setValue('backText', 'RETURN TO HOME');
             settings.setValue('backLink', '#/');
-            
+
             //Step forward to next form after validation
             $scope.next = function(url) {
                 if ($scope.userForm.$valid) {
@@ -304,14 +304,38 @@ angular.module('presidentsClubApp')
                 if ($scope.userForm.$valid) {
                     //Update local model for persistance
                     modelService.updateModel($scope.nomineeModel);
-                    //Post model to server
-                    nomineeService.postNominee($scope.nomineeModel).then(function(result) {
-                        if(result.error){
-                            $scope.submitError = true;
+
+                    var checkModel = true;
+                    for (var prop in $scope.nomineeModel) {
+                        if ($scope.nomineeModel.hasOwnProperty(prop)) {
+                            if ($scope.nomineeModel[prop] === null || $scope.nomineeModel[prop] === '') {
+                                console.log(prop, ' was null');
+                                if(prop === 'winCount'){
+                                    console.log('Ignoring winCount');
+                                } else if(prop === 'years'){
+                                    console.log('Ignoring years');
+                                } else if(prop === 'nominationStatus'){
+                                    console.log('Ignoring nominationStatus');
+                                } else {
+                                    checkModel = false;
+                                }
+                            }
                         }
-                        //Goto thank you page.
-                        $location.path('/' + url);
-                    });
+                    }
+
+                    if (!checkModel) {
+                        $location.path('/nominee');
+                    } else {
+                        //Post model to server
+                        nomineeService.postNominee($scope.nomineeModel).then(function(result) {
+                            if (result.error) {
+                                $scope.submitError = true;
+                            }
+                            //Goto thank you page.
+                            $location.path('/' + url);
+                        });
+                    }
+
                 }
             };
 
@@ -418,6 +442,7 @@ angular.module('presidentsClubApp')
         };
     });
 */
+
 'use strict';
 
 /**
@@ -854,14 +879,17 @@ angular.module('presidentsClubApp')
                 //Post a nominee
                 postNominee: function(dataObj) {
                     var q = $q.defer();
-                    $http.post('/api/v1/save', dataObj)
-                        .success(function(result) {
-                            q.resolve(result);
-                        }).error(function(msg, code) {
-                            q.reject(msg);
-                            console.log(msg, code);
-                        });
+                    q.resolve(dataObj);
                     return q.promise;
+                    // var q = $q.defer();
+                    // $http.post('/api/v1/save', dataObj)
+                    //     .success(function(result) {
+                    //         q.resolve(result);
+                    //     }).error(function(msg, code) {
+                    //         q.reject(msg);
+                    //         console.log(msg, code);
+                    //     });
+                    // return q.promise;
                 },
                 //Update nominee (Approve, Deny)
                 updateNominee: function(dataObj) {
